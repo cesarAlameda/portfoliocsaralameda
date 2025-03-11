@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ContactComponent } from './contact/contact.component'; // Importa el ContactComponent
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, ContactComponent], // Asegúrate de importar ContactComponent aquí
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'portfoliocsaralameda';
+  title = 'portfoliocsaralameda'; // Propiedad del título
 }
