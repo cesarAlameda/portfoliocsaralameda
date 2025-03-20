@@ -1,0 +1,10 @@
+<section class="about-container">
+    <div class="image-container">
+      <img [src]="profileImage" alt="Foto de perfil" class="profile-image">
+    </div>
+    
+    <article class="text-container">
+      <h2 class="section-title">Sobre mí</h2>
+      <p *ngFor="let paragraph of aboutText" class="about-paragraph">{{ paragraph }}</p>
+    </article>
+  </section>

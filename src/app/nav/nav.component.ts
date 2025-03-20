@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class NavComponent {
 
-  categories = ['Home', 'Projects', 'Skills', 'Contact','CV'];
+  categories = ['Sobre mí', 'Proyectos', 'Skills', 'Contacto','CV'];
 
   handleCategoryClick(category: string, event: Event) {
     if (category === 'CV') {

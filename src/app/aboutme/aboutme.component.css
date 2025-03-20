@@ -1,0 +1,147 @@
+/* Contenedor principal */
+.about-container {
+    width: 70%;
+    margin: 2rem auto;
+    padding: 3rem 4rem;
+    background: #2C3E50;
+    border-radius: 15px;
+    display: flex;
+    gap: 4rem;
+    align-items: center; /* Centrado vertical */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* Efecto slide con pseudo-elemento */
+  .about-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: -15px 0 30px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    border-radius: 15px;
+  }
+  
+  /* Contenedor de imagen */
+  .image-container {
+    flex: 0 0 200px;
+    position: relative;
+    align-self: flex-start;
+    z-index: 1;
+  }
+  
+  /* Estilo de la imagen de perfil */
+  .profile-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ECF0F1;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Contenedor de texto */
+  .text-container {
+    flex: 1;
+    color: #ECF0F1;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    padding: 1.5rem 0;
+  }
+  
+  /* Título de sección */
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #1abc9c;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #ECF0F1;
+  }
+  
+  /* Párrafos */
+  .about-paragraph {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .about-container {
+      width: 60%;
+    }
+    
+    .about-paragraph {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .profile-image {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-container {
+      width: 90%;
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+    }
+  
+    .image-container {
+      margin-bottom: 2rem;
+    }
+  
+    .profile-image {
+      width: 180px;
+      height: 180px;
+    }
+  
+    .section-title {
+      text-align: center;
+    }
+  
+    .section-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-container {
+      padding: 1.5rem 1rem;
+    }
+  
+    .section-title {
+      font-size: 1.6rem;
+    }
+  
+    .about-paragraph {
+      font-size: 1rem;
+    }
+  }
