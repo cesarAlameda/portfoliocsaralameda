@@ -1,0 +1,14 @@
+<div class="projects-container" *ngIf="filteredProjects.length > 0">
+    <h2 class="section-title">Proyectos</h2>
+    <div class="project-slide">
+      <button class="nav-arrow left" (click)="previousProject()">❮</button>
+      <div class="project-content">
+        <img [src]="filteredProjects[currentProjectIndex].imagen" 
+             alt="Project image" 
+             class="project-image">
+        <h3 class="project-title">{{ filteredProjects[currentProjectIndex].titulo }}</h3>
+        <p class="project-description">{{ filteredProjects[currentProjectIndex].descripcion }}</p>
+      </div>
+      <button class="nav-arrow right" (click)="nextProject()">❯</button>
+    </div>
+  </div>

@@ -1,0 +1,12 @@
+<div class="skills-container">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div *ngFor="let skill of skills" 
+           class="skill-item" 
+           (click)="selectSkill(skill.name)">
+        <img [src]="skill.image" 
+             [alt]="skill.name + ' logo'" 
+             class="skill-logo">
+      </div>
+    </div>
+  </div>

@@ -19,4 +19,9 @@ export class AboutmeComponent {
 
     `Perfil versátil con dominio avanzado de herramientas ofimáticas y plataformas colaborativas. Capacidad demostrada para trabajo en equipo en entornos multidisciplinares. En constante formación para mantenerse actualizado con las últimas tendencias del desarrollo software.`
   ];
+
+  linklinkedin ='https://www.linkedin.com/in/césar-alameda-barquillo-b059882b0';
+  linkgithub = 'https://github.com/cesarAlameda';
+  linkedinlogo = 'assets/linkedin.png' ;
+  githublogo = 'assets/github.png';
 }

@@ -8,7 +8,7 @@
     display: flex;
     gap: 4rem;
     align-items: center; /* Centrado vertical */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.3);
     position: relative;
   }
   
@@ -58,6 +58,41 @@
     padding: 1.5rem 0;
   }
   
+  /* logos de linkedin y github*/
+
+.text-container a {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.text-container a img {
+  width: 3em;
+}
+
+.text-container a:hover img {
+  transform: scale(1.1);
+ 
+}
+
+
+
+/* Efecto de línea decorativa */
+.text-container a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #1abc9c;
+  transition: width 0.2s ease;
+}
+
+.text-container a:hover::after {
+  width: 100%;
+}
+
   /* Título de sección */
   .section-title {
     font-size: 2.2rem;

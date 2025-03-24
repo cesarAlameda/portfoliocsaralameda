@@ -1,0 +1,20 @@
+[
+    {
+      "titulo": "Sistema de Gestión",
+      "descripcion": "Aplicación WPF para gestión empresarial",
+      "imagen": "assets/project1.png",
+      "skill": "C#"
+    },
+    {
+      "titulo": "App móvil Android",
+      "descripcion": "Plataforma de e-learning con Java",
+      "imagen": "assets/project2.png",
+      "skill": "Java"
+    },
+    {
+        "titulo": "App móasdfvil Android",
+        "descripcion": "Plataforma de e-learning con Java",
+        "imagen": "assets/project2.png",
+        "skill": "Java"
+      }
+  ]

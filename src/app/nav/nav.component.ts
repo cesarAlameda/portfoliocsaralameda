@@ -15,16 +15,29 @@ export class NavComponent {
 
   handleCategoryClick(category: string, event: Event) {
     if (category === 'CV') {
-      event.preventDefault(); // Evita que cambie de página
+      event.preventDefault(); 
       this.downloadCV();
+    }else{
+      event.preventDefault();
+      this.scrollToSection(category);
+    }
+
+    
+
+
+  }
+  scrollToSection(section: string) {
+    const sectionId = section.toLowerCase().replace(/\s+/g, '-');
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
-
   downloadCV() {
-    const cvUrl = 'assets/CésarAlamedaBarquillo.pdf'; // Ruta de tu CV en la carpeta "assets"
+    const cvUrl = 'assets/CésarAlamedaBarquillo.pdf'; 
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'CésarAlamedaBarquillo.pdf'; // Nombre del archivo descargado
+    link.download = 'CésarAlamedaBarquillo.pdf'; 
     link.click();
   }
 }
