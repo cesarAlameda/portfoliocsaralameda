@@ -8,6 +8,7 @@ interface Project {
   descripcion: string;
   imagen: string;
   skill: string;
+  url: string;
 }
 
 @Component({
@@ -22,6 +23,10 @@ export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
   filteredProjects: Project[] = [];
   currentProjectIndex: number = 0;
+  
+  getTitle(): string {
+    return this.selectedSkill ? `Proyectos ${this.selectedSkill}` : 'Proyectos';
+  }
 
   constructor(private http: HttpClient) {}
 

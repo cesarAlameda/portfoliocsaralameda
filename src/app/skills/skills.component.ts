@@ -15,8 +15,7 @@ export class SkillsComponent {
     { name: 'Java', image: 'assets/java.png' },
     { name: 'C#', image: 'assets/csharp.png' },
     { name: 'PHP', image: 'assets/php.png' },
-    { name: 'JavaScript', image: 'assets/javascript.png' },
-    { name: 'Python', image: 'assets/python.png' }
+    { name: 'Angular', image: 'assets/angular.png' }
   ];
 
   selectSkill(skill: string): void {

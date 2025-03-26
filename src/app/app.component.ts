@@ -5,18 +5,20 @@ import { AboutmeComponent } from './aboutme/aboutme.component';
 import { SkillsComponent } from './skills/skills.component'; 
 import { ProjectsComponent } from "./projects/projects.component";
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
-    ContactComponent, 
-    AboutmeComponent, 
-    NavComponent, 
-    SkillsComponent, 
-    ProjectsComponent
-  ],
+    CommonModule,
+    ContactComponent,
+    AboutmeComponent,
+    NavComponent,
+    SkillsComponent,
+    ProjectsComponent,
+    FooterComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

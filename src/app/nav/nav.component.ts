@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class NavComponent {
 
-  categories = ['Sobre mí', 'Proyectos', 'Skills', 'Contacto','CV'];
+  categories = ['Sobre mí', 'Skills','Proyectos', 'Contacto','CV'];
 
   handleCategoryClick(category: string, event: Event) {
     if (category === 'CV') {
@@ -29,8 +29,15 @@ export class NavComponent {
   scrollToSection(section: string) {
     const sectionId = section.toLowerCase().replace(/\s+/g, '-');
     const element = document.getElementById(sectionId);
+  
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const navbarHeight = document.querySelector('.navbar')?.clientHeight || 0; 
+      const offsetTop = element.offsetTop - navbarHeight - 20; 
+  
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
     }
   }
   downloadCV() {
