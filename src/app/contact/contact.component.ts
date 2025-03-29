@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import emailjs from '@emailjs/browser';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +11,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   contactForm;
 
   constructor(private fb: FormBuilder) {
@@ -20,10 +22,31 @@ export class ContactComponent {
     });
   }
 
-  onSubmit() {
+  ngOnInit() {
+
+    emailjs.init(environment.emailjs.publicKey); 
+  }
+
+  async onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Formulario enviado:', this.contactForm.value);
-      // Aquí puedes integrar HttpClient para enviar los datos
+      try {
+        const response = await emailjs.send(
+          environment.emailjs.serviceId,
+          environment.emailjs.templateId,
+          {
+            name: this.contactForm.value.name,
+            email: this.contactForm.value.email,
+            message: this.contactForm.value.message
+          }
+        );
+        
+        console.log('Email enviado!', response.status, response.text);
+        alert('Mensaje enviado con éxito!');
+        this.contactForm.reset();
+      } catch (error) {
+        console.error('Error al enviar:', error);
+        alert('Error al enviar el mensaje. Por favor inténtalo de nuevo más tarde.');
+      }
     }
   }
 }
