@@ -1,7 +1,9 @@
 <div class="projects-container" *ngIf="filteredProjects.length > 0" id="proyectos">
     <h2 class="section-title">{{ getTitle() }}</h2>
     <div class="project-slide">
-      <button class="nav-arrow left" (click)="previousProject()">❮</button>
+      <button class="nav-arrow left" 
+        (click)="previousProject()" 
+        [disabled]="filteredProjects.length === 1">❮</button>
       <div class="project-content">
         <a [href]="filteredProjects[currentProjectIndex].url"
         target="_blank">
@@ -13,6 +15,8 @@
         <h3 class="project-title">{{ filteredProjects[currentProjectIndex].titulo }}</h3>
         <p class="project-description">{{ filteredProjects[currentProjectIndex].descripcion }}</p>
       </div>
-      <button class="nav-arrow right" (click)="nextProject()">❯</button>
+      <button class="nav-arrow right" 
+        (click)="nextProject()" 
+        [disabled]="filteredProjects.length === 1">❯</button>
     </div>
   </div>

@@ -89,6 +89,11 @@
     height: 3px;
     background: #ECF0F1;
   }
+
+  .nav-arrow:disabled {
+    opacity: 0.01;
+    cursor: not-allowed;
+  }
   
   @media (max-width: 768px) {
     .projects-container {
@@ -98,12 +103,14 @@
   
     .project-slide {
       flex-direction: column;
+      position: relative; 
     }
   
     .nav-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      z-index: 1;
     }
   
     .nav-arrow.left {
