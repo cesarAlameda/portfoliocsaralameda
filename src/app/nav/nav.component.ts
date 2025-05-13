@@ -41,10 +41,10 @@ export class NavComponent {
     }
   }
   downloadCV() {
-    const cvUrl = 'assets/CésarAlamedaBarquillo.pdf'; 
+    const cvUrl = 'assets/CVCésarAlamedaBarquillo.pdf'; 
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'CésarAlamedaBarquillo.pdf'; 
+    link.download = 'CVCésarAlamedaBarquillo.pdf'; 
     link.click();
   }
 }
