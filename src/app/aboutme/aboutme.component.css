@@ -143,18 +143,21 @@
   
   @media (max-width: 768px) {
     .about-container {
-      width: 90%;
-      flex-direction: column;
-      padding: 2rem 1.5rem;
+        width: 90%; /* Centrar el contenedor principal */
+        flex-direction: column;
+        padding: 2rem 1.5rem; /* Espaciado adecuado para dispositivos móviles */
+        gap: 0;
     }
-  
-    .image-container {
-      margin-bottom: 2rem;
+    
+    .image-container{
+      width: 100%;
+      text-align: center;
     }
   
     .profile-image {
-      width: 180px;
-      height: 180px;
+       flex: 1;
+     
+
     }
   
     .section-title {

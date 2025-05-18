@@ -69,10 +69,18 @@
   @media (max-width: 768px) {
     .skills-container {
       width: 90%;
-      padding: 2rem 1.5rem;
+      padding: 1.5rem 1rem;
     }
   
     .skills-grid {
-      grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 1.5rem;
+    }
+
+    .skill-logo {
+    width: 100%;
+    max-width: 60px;  
+    height: auto;
     }
   }
