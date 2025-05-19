@@ -34,12 +34,18 @@ export class ProjectsComponent implements OnInit {
     this.loadProjects();
   }
 
-  loadProjects(): void {
-    this.http.get<Project[]>('assets/projects.json').subscribe(data => {
-      this.projects = data;
-      this.filterProjects();
+ loadProjects(): void {
+  this.http.get<Project[]>('assets/projects.json').subscribe(data => {
+    this.projects = data;
+    this.filterProjects();
+
+   
+    this.projects.forEach(p => {
+      const img = new Image();
+      img.src = p.imagen;
     });
-  }
+  });
+}
 
   ngOnChanges(): void {
     this.filterProjects();
