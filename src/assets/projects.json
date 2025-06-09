@@ -29,8 +29,8 @@
         "url":"https://github.com/cesarAlameda"
     },
     {
-      "titulo": "Servicio de Conexión de Red basado en TCP/IP",
-      "descripcion": "Desarrollé este proyecto como un servicio de Windows que utiliza protocolos TCP/IP para establecer conexiones entre equipos. Además añadí en el apartado del cliente una interfaz usando la tecnología WPF",
+      "titulo": "Servicio de Conexión de Red basado en SSH",
+      "descripcion": "Desarrollé este proyecto como un servicio de Windows que utiliza el protocolo SSH para establecer conexiones entre equipos. Además añadí en el apartado del cliente una interfaz usando la tecnología WPF",
       "imagen": "assets/project1.png",
       "skill": "C#",
       "url":"https://github.com/cesarAlameda"
