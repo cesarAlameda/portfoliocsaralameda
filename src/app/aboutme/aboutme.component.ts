@@ -9,19 +9,18 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./aboutme.component.css']
 })
 export class AboutmeComponent {
-  // Datos modificables para mayor flexibilidad
-  profileImage = 'assets/profile.png'; // Ruta a la imagen de perfil
-  // Texto de ejemplo que puede ser modificado posteriormente
+  profileImage = 'assets/profile.png';
+
   aboutText = [
-    `Desarrollador de Aplicaciones Multiplataforma titulado en el I.E.S. Ribera del Tajo, con experiencia profesional en desarrollo de software para Informática MAIS. Especializado en crear soluciones tecnológicas usando WPF (.NET) para aplicaciones de escritorio y Java para desarrollo Android, complementado con implementación de backends en PHP.`,
+    `Desarrollador de Aplicaciones Multiplataforma titulado en el IES Ribera del Tajo, con experiencia en prácticas en MAIS Informática, donde desarrollé módulos en Java y servicios Windows en C#. He creado back-ends en PHP y aplicaciones de escritorio con WPF (.NET), así como apps móviles Android en Java.`,
 
-    `Domino tecnologías frontend (HTML/CSS/JavaScript) y bases de datos SQL (Oracle/MySQL), con conocimientos adicionales en Python para scripting y automatización. Actualmente enfocado en mejorar arquitecturas limpias y escalables, combinando prácticas ágiles con metodologías DevOps.`,
+    `Domino tecnologías frontend (HTML, CSS, JavaScript) y manejo bases de datos SQL (MySQL, Oracle, PostgreSQL), y cuento con conocimientos de Python para scripting y automatización. Últimamente, estoy profundizando de forma autodidacta en Spring Boot, aprendiendo a diseñar APIs REST escalables y a implementar arquitecturas limpias.`,
 
-    `Perfil versátil con dominio avanzado de herramientas ofimáticas y plataformas colaborativas. Capacidad demostrada para trabajo en equipo en entornos multidisciplinares. En constante formación para mantenerse actualizado con las últimas tendencias del desarrollo software.`
+    `Trabajo cómodamente en entornos ágiles y colaborativos, aplicando buenas prácticas DevOps y documentación técnica. Mi perfil combina versatilidad técnica, actitud proactiva y ganas de seguir creciendo con las últimas tendencias del desarrollo de software.`
   ];
 
-  linklinkedin ='https://www.linkedin.com/in/césar-alameda-barquillo-b059882b0';
+  linklinkedin = 'https://www.linkedin.com/in/césar-alameda-barquillo-b059882b0';
   linkgithub = 'https://github.com/cesarAlameda';
-  linkedinlogo = 'assets/linkedin.png' ;
+  linkedinlogo = 'assets/linkedin.png';
   githublogo = 'assets/github.png';
 }
