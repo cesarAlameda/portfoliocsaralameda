@@ -1,0 +1,51 @@
+<section id="experience" class="section" appScrollAnimate>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">Professional experience building backend systems, integrations, and automation solutions.</p>
+    </div>
+    <div class="timeline">
+      <div *ngFor="let exp of experiences" class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="card timeline-card">
+          <div class="timeline-card-header">
+            <div>
+              <h3 class="timeline-role">{{ exp.role }}</h3>
+              <p class="timeline-company">{{ exp.company }}</p>
+            </div>
+            <div class="timeline-meta">
+              <span class="badge badge-muted">{{ exp.date }}</span>
+              <span class="timeline-location">{{ exp.location }}</span>
+            </div>
+          </div>
+          <div class="timeline-details">
+            <div class="timeline-detail">
+              <span class="timeline-detail-label">Problem</span>
+              <p>{{ exp.problem }}</p>
+            </div>
+            <div class="timeline-detail">
+              <span class="timeline-detail-label">Solution</span>
+              <p>{{ exp.solution }}</p>
+            </div>
+            <div class="timeline-detail">
+              <span class="timeline-detail-label">Tech Stack</span>
+              <div class="timeline-tags">
+                <span *ngFor="let tech of exp.stack" class="badge">{{ tech }}</span>
+              </div>
+            </div>
+            <div class="timeline-detail" *ngIf="exp.integrations.length">
+              <span class="timeline-detail-label">Integrations</span>
+              <ul class="timeline-list">
+                <li *ngFor="let integration of exp.integrations">{{ integration }}</li>
+              </ul>
+            </div>
+            <div class="timeline-detail">
+              <span class="timeline-detail-label">Impact</span>
+              <p>{{ exp.impact }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+<section id="ai-automation" class="section" appScrollAnimate>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge-row">
+        <span class="badge ai-badge">Applied AI</span>
+      </div>
+      <h2 class="section-title">AI & Automation</h2>
+      <p class="section-subtitle">Exploring and building intelligent automation solutions powered by large language models and AI APIs.</p>
+    </div>
+    <div class="ai-grid">
+      <div *ngFor="let entry of entries" class="card ai-card">
+        <div class="ai-card-header">
+          <h3 class="ai-card-title">{{ entry.title }}</h3>
+          <span class="badge" [class.badge-muted]="entry.status === 'exploring'" [class.ai-status-built]="entry.status === 'built'">
+            {{ entry.status === 'exploring' ? 'Exploring' : entry.status === 'built' ? 'Built' : 'Learning' }}
+          </span>
+        </div>
+        <p class="ai-card-desc">{{ entry.description }}</p>
+        <div class="ai-details">
+          <div class="ai-detail">
+            <span class="ai-detail-label">Context</span>
+            <p>{{ entry.context }}</p>
+          </div>
+          <div class="ai-detail">
+            <span class="ai-detail-label">Tools & APIs</span>
+            <div class="ai-tags">
+              <span *ngFor="let tool of entry.tools" class="badge">{{ tool }}</span>
+            </div>
+          </div>
+          <div class="ai-detail">
+            <span class="ai-detail-label">Workflow</span>
+            <p>{{ entry.workflow }}</p>
+          </div>
+          <div class="ai-detail">
+            <span class="ai-detail-label">Learnings</span>
+            <p>{{ entry.learnings }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

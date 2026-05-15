@@ -1,26 +1,43 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollAnimateDirective } from '../shared/scroll-animate.directive';
 
 @Component({
   selector: 'app-aboutme',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollAnimateDirective],
   templateUrl: './aboutme.component.html',
   styleUrls: ['./aboutme.component.css']
 })
 export class AboutmeComponent {
   profileImage = 'assets/profile.png';
 
-  aboutText = [
-    `Desarrollador de Aplicaciones Multiplataforma titulado en el IES Ribera del Tajo, con experiencia en prácticas en MAIS Informática, donde desarrollé módulos en Java y servicios Windows en C#. He creado back-ends en PHP y aplicaciones de escritorio con WPF (.NET), así como apps móviles Android en Java.`,
+  isFlipped = false;
 
-    `Domino tecnologías frontend (HTML, CSS, JavaScript) y manejo bases de datos SQL (MySQL, Oracle, PostgreSQL), y cuento con conocimientos de Python para scripting y automatización. Últimamente, estoy profundizando de forma autodidacta en Spring Boot, aprendiendo a diseñar APIs REST escalables y a implementar arquitecturas limpias.`,
-
-    `Trabajo cómodamente en entornos ágiles y colaborativos, aplicando buenas prácticas DevOps y documentación técnica. Mi perfil combina versatilidad técnica, actitud proactiva y ganas de seguir creciendo con las últimas tendencias del desarrollo de software.`
+  skills = [
+    'Java',
+    'Spring Boot',
+    'Angular',
+    'APIs REST',
+    'C#',
+    '.NET',
+    'PHP',
+    'MySQL',
+    'PostgreSQL',
+    'Oracle',
+    'Docker',
+    'Git',
+    'DevOps',
+    'LLMs',
+    'Automatización'
   ];
 
-  linklinkedin = 'https://www.linkedin.com/in/césar-alameda-barquillo-b059882b0';
-  linkgithub = 'https://github.com/cesarAlameda';
-  linkedinlogo = 'assets/linkedin.png';
-  githublogo = 'assets/github.png';
+  aboutText = 'Desarrollador de software especializado en APIs, integraciones empresariales y automatizacion inteligente. Con aproximadamente un ano de experiencia profesional, he trabajado en el desarrollo de modulos backend en Java, servicios Windows en C# y aplicaciones full-stack con PHP y Angular.\n\nMi enfoque esta en la arquitectura backend limpia, el diseno de APIs REST escalables y la integracion de sistemas empresariales. Trabajo con bases de datos relacionales (MySQL, Oracle, PostgreSQL) y aplico principios de arquitectura limpia y buenas practicas DevOps en cada proyecto.\n\nActualmente estoy explorando activamente el campo de la IA aplicada: workflows con LLMs, automatizacion inteligente y APIs de IA para resolver problemas de negocio reales. Mi objetivo es combinar una base solida en backend e integraciones con las capacidades emergentes de la inteligencia artificial.';
+
+  linkedinUrl = 'https://www.linkedin.com/in/cesar-alameda-barquillo-b059882b0';
+  githubUrl = 'https://github.com/cesarAlameda';
+
+  toggleFlip(): void {
+    this.isFlipped = !this.isFlipped;
+  }
 }

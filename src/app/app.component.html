@@ -1,8 +1,11 @@
 <app-nav></app-nav>
 <main class="content-wrapper">
+  <app-hero></app-hero>
   <app-aboutme></app-aboutme>
-  <app-skills (skillSelected)="selectedSkill = $event"></app-skills>
-  <app-projects [selectedSkill]="selectedSkill"></app-projects>
+  <app-experience></app-experience>
+  <app-tech-stack></app-tech-stack>
+  <app-projects></app-projects>
+  <app-ai-automation></app-ai-automation>
   <app-contact></app-contact>
   <app-footer></app-footer>
 </main>

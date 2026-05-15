@@ -1,0 +1,16 @@
+<section id="tech-stack" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Tech Stack</h2>
+      <p class="section-subtitle">Technologies I work with daily — focused on backend, integrations, and AI tooling.</p>
+    </div>
+    <div class="stack-grid">
+      <div *ngFor="let category of categories" class="card stack-category">
+        <h3 class="stack-category-title">{{ category.name }}</h3>
+        <div class="stack-tags">
+          <span *ngFor="let tech of category.technologies" class="badge">{{ tech }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

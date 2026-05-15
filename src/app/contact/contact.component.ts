@@ -3,16 +3,19 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import emailjs from '@emailjs/browser';
 import { environment } from '../../environments/environment';
+import { ScrollAnimateDirective } from '../shared/scroll-animate.directive';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, ScrollAnimateDirective],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
   contactForm;
+  formSubmitted = false;
+  submitStatus: 'idle' | 'success' | 'error' = 'idle';
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -23,14 +26,15 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit() {
-
     emailjs.init(environment.emailjs.publicKey); 
   }
 
   async onSubmit() {
+    this.formSubmitted = true;
     if (this.contactForm.valid) {
+      this.submitStatus = 'idle';
       try {
-        const response = await emailjs.send(
+        await emailjs.send(
           environment.emailjs.serviceId,
           environment.emailjs.templateId,
           {
@@ -39,13 +43,13 @@ export class ContactComponent implements OnInit {
             message: this.contactForm.value.message
           }
         );
-        
-        console.log('Email enviado!', response.status, response.text);
-        alert('Mensaje enviado con éxito!');
+        this.submitStatus = 'success';
         this.contactForm.reset();
+        this.formSubmitted = false;
+        setTimeout(() => this.submitStatus = 'idle', 5000);
       } catch (error) {
         console.error('Error al enviar:', error);
-        alert('Error al enviar el mensaje. Por favor inténtalo de nuevo más tarde.');
+        this.submitStatus = 'error';
       }
     }
   }

@@ -1,95 +1,127 @@
-/* Estilos generales */
-form {
+/* Contact Form Styles */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.contact-form {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: linear-gradient(145deg, #2c3e50, #34495e);
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: var(--space-5);
 }
 
-form:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
-h2 {
-  color: #ECF0F1;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-}
- 
-/* Estilos para los inputs y textarea */
-input, textarea {
-  margin-bottom: 1.5rem;
-  padding: 12px;
-  border: 2px solid #4a5568;
-  border-radius: 8px;
-  font-size: 16px;
-  background-color: #1a202c;
-  color: #ecf0f1;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-input:focus, textarea:focus {
-  border-color: #1abc9c;
-  box-shadow: 0 0 8px rgba(26, 188, 156, 0.3);
+.form-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  transition: all var(--transition-base);
   outline: none;
 }
 
-/* Estilos para el botón */
-button {
-  padding: 12px;
-  background-color: #1abc9c;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+.form-input::placeholder {
+  color: var(--color-text-muted);
 }
 
-button:hover:not(:disabled) {
-  background-color: #16a085;
-  transform: scale(1.05);
+.form-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-subtle);
 }
 
-button:disabled {
-  background-color: #4a5568;
-  cursor: not-allowed;
+.form-input-error {
+  border-color: var(--color-error) !important;
 }
 
-/* Estilos para los mensajes de error */
-div.error-message {
-  color: #ff3860;
-  font-size: 14px;
-  margin-bottom: 10px;
-  animation: fadeIn 0.3s ease;
+.form-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(-10px);
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-error {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  padding-left: var(--space-1);
+}
+
+.form-submit {
+  align-self: flex-start;
+}
+
+.form-submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.form-status {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.form-status-success {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--color-success);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.form-status-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Contact info side */
+.contact-info-side {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.contact-info-text {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+}
+
+.contact-info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  transition: color var(--transition-base);
+}
+
+.contact-info-link:hover {
+  color: var(--color-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
   }
-  to {
-      opacity: 1;
-      transform: translateY(0);
+
+  .form-submit {
+    width: 100%;
   }
-}
-
-/* Estilos para el texto de placeholder */
-::placeholder {
-  color: #a0aec0;
-  opacity: 1;
-}
-
-/* Efecto de hover en los inputs */
-input:hover, textarea:hover {
-  border-color: #1abc9c;
 }

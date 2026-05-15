@@ -1,0 +1,30 @@
+/* Tech Stack Styles */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.stack-category {
+  padding: var(--space-6);
+}
+
+.stack-category-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.stack-tags .badge {
+  font-size: var(--text-sm);
+  padding: var(--space-1) var(--space-3);
+}

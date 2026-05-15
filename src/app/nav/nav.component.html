@@ -1,16 +1,23 @@
-<nav class="navbar">
-    <div class="navbar-container">
-      <a href="https://github.com/cesarAlameda" class="navbar-logo" target="_blank">César Alameda Barquillo</a>
-      <ul class="navbar-menu">
-        <li *ngFor="let category of categories" class="navbar-item">
-          <a 
-            href="#" 
-            class="navbar-link" 
-            (click)="handleCategoryClick(category, $event)">
-            {{ category }}
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  
+﻿<nav class="navbar" [class.navbar-scrolled]="isScrolled">
+  <div class="container navbar-container">
+    <a href="#" class="navbar-logo" (click)="scrollToSection('hero'); $event.preventDefault()">Cesar Alameda Barquillo</a>
+    <button class="nav-toggle" (click)="isMenuOpen = !isMenuOpen" aria-label="Toggle menu">
+      <span class="hamburger-line" [class.open]="isMenuOpen"></span>
+      <span class="hamburger-line" [class.open]="isMenuOpen"></span>
+      <span class="hamburger-line" [class.open]="isMenuOpen"></span>
+    </button>
+    <ul class="navbar-menu" [class.open]="isMenuOpen">
+      <li *ngFor="let link of navLinks" class="navbar-item">
+        <a 
+          [href]="link.href"
+          class="navbar-link"
+          [class.active]="!link.action && activeSection === link.href.substring(1)"
+          (click)="handleNavClick(link, $event)">
+          {{ link.label }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="nav-overlay" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
+
