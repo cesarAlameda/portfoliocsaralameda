@@ -18,7 +18,7 @@
     "focus_title": "Áreas de enfoque",
     "focus_backend": "Desarrollo backend con Java, Spring Boot y PostgreSQL, construyendo APIs robustas y sistemas escalables.",
     "focus_enterprise": "Integraciones ERP con a3ERP, .NET y C#, desarrollando soluciones empresariales a medida.",
-    "focus_plugins": "Plugins avanzados para servidores Minecraft con Bukkit/Spigot, sistemas de configuración JSON."
+    "focus_ai": "Explorando integraciones con IA, flujos de automatización y sistemas inteligentes para construir soluciones empresariales más eficientes."
   },
   "experience": {
     "title": "Experiencia",
@@ -59,9 +59,9 @@
     "go_home": "Volver al inicio"
   },
   "metadata": {
-    "home_title": "César Alameda | Desarrollador Backend & Software Empresarial",
-    "home_description": "Desarrollador backend especializado en Java, Spring Boot, PostgreSQL e integraciones ERP. Descubre mi portfolio, proyectos y experiencia profesional.",
+    "home_title": "César Alameda | Desarrollador Backend, Empresarial e IA",
+    "home_description": "Desarrollador backend especializado en Java, Spring Boot, PostgreSQL, integraciones ERP y automatización con IA. Descubre mi portfolio, proyectos y experiencia profesional.",
     "projects_title": "Proyectos | César Alameda",
-    "projects_description": "Explora mis proyectos destacados: desarrollo backend, integraciones ERP, plugins Minecraft y soluciones empresariales."
+    "projects_description": "Explora mis proyectos destacados: desarrollo backend, integraciones ERP, soluciones empresariales e investigación en automatización con IA."
   }
 }

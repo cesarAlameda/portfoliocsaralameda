@@ -5,11 +5,15 @@
   "roles": [
     "Backend Developer",
     "Enterprise Software Developer",
-    "Java Developer"
+    "AI Integration Explorer"
   ],
+  "research_interests": {
+    "es": "Investigando integraciones con Inteligencia Artificial, automatización de procesos empresariales y sistemas inteligentes.",
+    "en": "Researching AI integrations, business process automation, and intelligent systems."
+  },
   "summary": {
-    "es": "Desarrollador backend especializado en Java, Spring Boot y PostgreSQL con experiencia en soluciones empresariales, integraciones ERP y desarrollo de software a medida. Actualmente trabajando en entornos empresariales con tecnologías .NET y a3ERP, desarrollando herramientas e integraciones para negocio.",
-    "en": "Backend developer specialized in Java, Spring Boot, and PostgreSQL with experience in enterprise solutions, ERP integrations, and custom software development. Currently working in business environments using .NET technologies and a3ERP integrations to build enterprise tools and business solutions."
+    "es": "Desarrollador backend especializado en Java, Spring Boot y PostgreSQL con experiencia en soluciones empresariales, integraciones ERP y desarrollo de software a medida. Actualmente investigando integraciones con Inteligencia Artificial y automatización para aplicar en entornos empresariales, combinando mi experiencia en .NET y a3ERP.",
+    "en": "Backend developer specialized in Java, Spring Boot, and PostgreSQL with experience in enterprise solutions, ERP integrations, and custom software development. Currently exploring AI integrations and automation to apply in enterprise environments, combining my experience with .NET and a3ERP."
   },
   "avatar": "/portfoliocsaralameda/images/profile.svg",
   "social": {

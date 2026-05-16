@@ -19,8 +19,7 @@
   { "name": "Git", "category": "Dev Tools", "level": "advanced" },
   { "name": "Docker", "category": "Dev Tools", "level": "intermediate" },
   { "name": "Linux", "category": "Dev Tools", "level": "intermediate" },
-  { "name": "Bukkit", "category": "Game Development", "level": "advanced" },
-  { "name": "Spigot", "category": "Game Development", "level": "advanced" },
-  { "name": "Minecraft Plugins", "category": "Game Development", "level": "advanced" },
-  { "name": "JSON Configuration", "category": "Game Development", "level": "advanced" }
+  { "name": "AI Integrations", "category": "Emerging", "level": "exploring" },
+  { "name": "Automation", "category": "Emerging", "level": "exploring" },
+  { "name": "Intelligent Systems", "category": "Emerging", "level": "exploring" }
 ]

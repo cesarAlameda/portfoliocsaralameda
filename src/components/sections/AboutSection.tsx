@@ -20,9 +20,9 @@ export default function AboutSection() {
       tech: ["a3ERP", ".NET", "C#"],
     },
     {
-      title: "Plugins",
-      description: t("focus_plugins"),
-      tech: ["Bukkit", "Spigot", "JSON"],
+      title: "AI & Automation",
+      description: t("focus_ai"),
+      tech: ["AI Integrations", "Automation", "Innovation"],
     },
   ];
 
@@ -70,7 +70,7 @@ export default function AboutSection() {
           transition={{ duration: 0.4, delay: 0.3 }}
         >
           <span className="text-accent font-mono">{t("focus_title")}:</span>{" "}
-          {t("focus_backend")} {t("focus_enterprise")} {t("focus_plugins")}
+          {t("focus_backend")} {t("focus_enterprise")} {t("focus_ai")}
         </motion.p>
       </div>
     </section>

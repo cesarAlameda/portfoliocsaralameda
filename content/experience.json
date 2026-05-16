@@ -5,10 +5,10 @@
     "location": "Madrid, Spain",
     "period": { "start": "2025-06", "end": null },
     "description": {
-      "es": "Desarrollo de soluciones empresariales e integraciones relacionadas con a3ERP, trabajando con tecnologías .NET, SQL y herramientas orientadas a negocio.",
-      "en": "Development of enterprise software solutions and a3ERP integrations using .NET technologies, SQL, and business-oriented tools."
+      "es": "Desarrollo de soluciones empresariales e integraciones relacionadas con a3ERP, trabajando con tecnologías .NET, SQL y herramientas orientadas a negocio. Explorando activamente integraciones con IA y automatización para mejorar procesos empresariales.",
+      "en": "Development of enterprise software solutions and a3ERP integrations using .NET technologies, SQL, and business-oriented tools. Actively exploring AI integrations and automation to improve business processes."
     },
-    "technologies": ["C#", ".NET", "SQL", "a3ERP"],
+    "technologies": ["C#", ".NET", "SQL", "a3ERP", "AI Integrations"],
     "type": "software"
   },
   {
