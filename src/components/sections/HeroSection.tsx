@@ -75,7 +75,7 @@ export default function HeroSection({ profile }: Props) {
           <CTAButton href={profile.cv[locale]} download variant="primary">
             {t("download_cv")} ↓
           </CTAButton>
-          <CTAButton href="/#contact" variant="outline">
+          <CTAButton href={profile.social.linkedin} variant="outline" target="_blank" rel="noopener noreferrer">
             {t("contact_me")}
           </CTAButton>
         </motion.div>
