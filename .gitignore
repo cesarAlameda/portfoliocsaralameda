@@ -5,11 +5,16 @@
 /tmp
 /out-tsc
 /bazel-out
+/out
+.next/
 
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
+
+# Next.js
+next-env.d.ts
 
 # IDEs and editors
 .idea/
@@ -40,3 +45,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+

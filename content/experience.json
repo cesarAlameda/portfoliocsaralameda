@@ -1,0 +1,26 @@
+[
+  {
+    "company": "Pool Informático | Grupo iUNiS",
+    "role": "Junior Developer",
+    "location": "Madrid, Spain",
+    "period": { "start": "2024-01", "end": null },
+    "description": {
+      "es": "Desarrollo de soluciones empresariales e integraciones relacionadas con a3ERP, trabajando con tecnologías .NET, SQL y herramientas orientadas a negocio.",
+      "en": "Development of enterprise software solutions and a3ERP integrations using .NET technologies, SQL, and business-oriented tools."
+    },
+    "technologies": ["C#", ".NET", "SQL", "a3ERP"],
+    "type": "software"
+  },
+  {
+    "company": "Informática MAIS",
+    "role": "Software Developer Intern",
+    "location": "Madrid, Spain",
+    "period": { "start": "2023-06", "end": "2023-12" },
+    "description": {
+      "es": "Participación en distintos proyectos de desarrollo de software trabajando con Java y tecnologías backend dentro de un entorno colaborativo.",
+      "en": "Worked on multiple software development projects using Java and backend technologies in a collaborative development environment."
+    },
+    "technologies": ["Java", "Backend Development"],
+    "type": "software"
+  }
+]

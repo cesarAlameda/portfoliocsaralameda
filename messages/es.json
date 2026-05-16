@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "download_cv": "Descargar CV",
+    "contact_me": "Contactar"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Desarrollador Backend & Software Empresarial",
+    "focus_title": "Áreas de enfoque",
+    "focus_backend": "Desarrollo backend con Java, Spring Boot y PostgreSQL, construyendo APIs robustas y sistemas escalables.",
+    "focus_enterprise": "Integraciones ERP con a3ERP, .NET y C#, desarrollando soluciones empresariales a medida.",
+    "focus_plugins": "Plugins avanzados para servidores Minecraft con Bukkit/Spigot, sistemas de configuración JSON."
+  },
+  "experience": {
+    "title": "Experiencia",
+    "subtitle": "Trayectoria profesional en desarrollo de software",
+    "present": "Actualidad",
+    "other_title": "Otra Experiencia"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Trabajos destacados y proyectos personales",
+    "view_all": "Ver todos los proyectos",
+    "view_project": "Ver proyecto",
+    "view_github": "Ver en GitHub",
+    "view_demo": "Ver demo",
+    "featured": "Destacado",
+    "no_projects": "No hay proyectos disponibles actualmente."
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "subtitle": "Tecnologías y herramientas con las que trabajo"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Conectemos",
+    "description": "Si tienes un proyecto interesante o quieres colaborar, no dudes en contactarme.",
+    "email_label": "Enviar correo",
+    "linkedin_label": "Visitar LinkedIn",
+    "github_label": "Visitar GitHub",
+    "download_cv": "Descargar CV"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados.",
+    "built_with": "Construido con Next.js, TailwindCSS y TypeScript"
+  },
+  "not_found": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o ha sido movida.",
+    "go_home": "Volver al inicio"
+  },
+  "metadata": {
+    "home_title": "César Alameda | Desarrollador Backend & Software Empresarial",
+    "home_description": "Desarrollador backend especializado en Java, Spring Boot, PostgreSQL e integraciones ERP. Descubre mi portfolio, proyectos y experiencia profesional.",
+    "projects_title": "Proyectos | César Alameda",
+    "projects_description": "Explora mis proyectos destacados: desarrollo backend, integraciones ERP, plugins Minecraft y soluciones empresariales."
+  }
+}

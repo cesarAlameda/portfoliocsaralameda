@@ -1,0 +1,24 @@
+{
+  "name": "César Alameda Barquillo",
+  "location": "Madrid, Spain",
+  "languages": ["es", "en"],
+  "roles": [
+    "Backend Developer",
+    "Enterprise Software Developer",
+    "Java Developer"
+  ],
+  "summary": {
+    "es": "Desarrollador backend especializado en Java, Spring Boot y PostgreSQL con experiencia en soluciones empresariales, integraciones ERP y desarrollo de software a medida. Actualmente trabajando en entornos empresariales con tecnologías .NET y a3ERP, desarrollando herramientas e integraciones para negocio.",
+    "en": "Backend developer specialized in Java, Spring Boot, and PostgreSQL with experience in enterprise solutions, ERP integrations, and custom software development. Currently working in business environments using .NET technologies and a3ERP integrations to build enterprise tools and business solutions."
+  },
+  "avatar": "/images/profile.png",
+  "social": {
+    "linkedin": "https://linkedin.com/in/césar-alameda-barquillo-b059882b0",
+    "github": "https://github.com/cesarAlameda",
+    "email": "cesar.alameda@example.com"
+  },
+  "cv": {
+    "es": "/cv/cv-es.pdf",
+    "en": "/cv/cv-en.pdf"
+  }
+}
