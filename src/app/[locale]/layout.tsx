@@ -54,8 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const l = locale as "es" | "en";
   const t = metadataTitles[l];
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://cesaralameda.dev";
+  const siteUrl = "https://cesaralameda.github.io/portfoliocsaralameda";
 
   return {
     title: t.title,

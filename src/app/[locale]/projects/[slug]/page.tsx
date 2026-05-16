@@ -28,15 +28,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!project) return { title: "Not Found" };
 
+  const siteUrl = "https://cesaralameda.github.io/portfoliocsaralameda";
+
   return {
     title:
       locale === "es"
         ? `${project.title.es} | César Alameda`
         : `${project.title.en} | César Alameda`,
     description: project.description[locale as "es" | "en"],
+    metadataBase: new URL(siteUrl),
     openGraph: {
       title: project.title[locale as "es" | "en"],
       description: project.description[locale as "es" | "en"],
+      images: project.images.length > 0 ? project.images : undefined,
     },
   };
 }

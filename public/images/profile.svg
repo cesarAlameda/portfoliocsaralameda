@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="95" fill="#1a1a2e" stroke="#60a5fa" stroke-width="3"/>
+  <circle cx="100" cy="80" r="30" fill="#3b82f6" opacity="0.6"/>
+  <ellipse cx="100" cy="155" rx="50" ry="30" fill="#3b82f6" opacity="0.4"/>
+  <text x="100" y="190" font-family="Arial, sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">César Alameda</text>
+</svg>

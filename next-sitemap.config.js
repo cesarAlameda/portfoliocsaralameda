@@ -1,16 +1,16 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://cesaralameda.dev",
+  siteUrl: "https://cesaralameda.github.io/portfoliocsaralameda",
   generateRobotsTxt: true,
   outDir: "out",
   exclude: ["/404"],
   alternateRefs: [
     {
-      href: "https://cesaralameda.dev/es",
+      href: "https://cesaralameda.github.io/portfoliocsaralameda/es",
       hreflang: "es",
     },
     {
-      href: "https://cesaralameda.dev/en",
+      href: "https://cesaralameda.github.io/portfoliocsaralameda/en",
       hreflang: "en",
     },
   ],
