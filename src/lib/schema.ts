@@ -31,7 +31,8 @@ export interface Skill {
     | "Enterprise Software"
     | "Frontend"
     | "Dev Tools"
-    | "Game Development";
+    | "Game Development"
+    | "Emerging";
   level?: "expert" | "advanced" | "intermediate" | "familiar";
 }
 
@@ -83,5 +84,9 @@ export const SKILL_CATEGORY_LABELS: Record<
   "Game Development": {
     es: "Desarrollo de Videojuegos",
     en: "Game Development",
+  },
+  Emerging: {
+    es: "Emergente",
+    en: "Emerging",
   },
 } as const;

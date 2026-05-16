@@ -17,14 +17,14 @@ const pageTranslations = {
     subtitle: "Trabajos destacados y proyectos personales",
     metaTitle: "Proyectos | César Alameda",
     metaDesc:
-      "Explora mis proyectos destacados: desarrollo backend, integraciones ERP, plugins Minecraft y soluciones empresariales.",
+      "Explora mis proyectos destacados: desarrollo backend, integraciones ERP, soluciones empresariales y apps móviles.",
   },
   en: {
     title: "Projects",
     subtitle: "Featured work and personal projects",
     metaTitle: "Projects | César Alameda",
     metaDesc:
-      "Explore my featured projects: backend development, ERP integrations, Minecraft plugins, and enterprise solutions.",
+      "Explore my featured projects: backend development, ERP integrations, enterprise solutions, and mobile apps.",
   },
 } as const;
 
