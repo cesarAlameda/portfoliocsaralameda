@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/ui/SectionTitle";
-import SkillBadge from "@/components/ui/SkillBadge";
+import SkillLabel from "@/components/ui/SkillBadge";
 import { SKILL_CATEGORY_LABELS } from "@/lib/schema";
 import type { Skill } from "@/lib/schema";
 
@@ -34,11 +34,15 @@ export default function SkillsSection({ skills }: Props) {
   ] as const;
 
   return (
-    <section id="skills" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
+    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="max-w-5xl mx-auto relative z-10">
+        <SectionTitle
+          title={t("title")}
+          subtitle={t("subtitle")}
+          sectionNumber="04"
+        />
 
-        <div className="space-y-8">
+        <div className="space-y-10">
           {categoryOrder.map((category, catIndex) => {
             const categorySkills = grouped[category];
             if (!categorySkills) return null;
@@ -53,12 +57,12 @@ export default function SkillsSection({ skills }: Props) {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: catIndex * 0.1 }}
               >
-                <h3 className="text-sm font-mono text-accent mb-3 uppercase tracking-wider">
+                <h3 className="font-mono text-xs uppercase tracking-widest text-accent mb-4">
                   {labels[locale]}
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-x-5 gap-y-2">
                   {categorySkills.map((skill) => (
-                    <SkillBadge key={skill.name} skill={skill} locale={locale} />
+                    <SkillLabel key={skill.name} skill={skill} locale={locale} />
                   ))}
                 </div>
               </motion.div>

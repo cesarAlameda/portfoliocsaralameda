@@ -19,24 +19,24 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg-primary border-b border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo — text-based full name */}
           <Link
             href="/"
-            className="text-lg font-bold font-mono text-accent hover:text-accent-hover transition-colors"
+            className="text-base font-bold font-sans text-text-primary hover:text-accent transition-colors duration-150"
           >
-            &lt;CA /&gt;
+            César Alameda
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-8">
             {navSections.map((section) => (
               <Link
                 key={section.key}
                 href={section.href as "/"}
-                className="text-sm text-text-secondary hover:text-accent transition-colors"
+                className="text-xs font-mono uppercase tracking-widest text-text-secondary hover:text-accent transition-colors duration-150"
               >
                 {t(section.key as any)}
               </Link>
@@ -73,13 +73,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden glass border-t border-border-glass">
+        <div className="md:hidden bg-bg-secondary border-t border-border">
           <div className="px-4 py-3 space-y-2">
             {navSections.map((section) => (
               <Link
                 key={section.key}
                 href={section.href as "/"}
-                className="block py-2 text-sm text-text-secondary hover:text-accent transition-colors"
+                className="block py-2 text-sm font-mono uppercase tracking-widest text-text-secondary hover:text-accent transition-colors duration-150"
                 onClick={() => setMobileOpen(false)}
               >
                 {t(section.key as any)}

@@ -1,75 +1,64 @@
 "use client";
 
-import { motion } from "framer-motion";
 import type { Project } from "@/lib/schema";
-import TechBadge from "./TechBadge";
 import { Link } from "@/navigation";
 
 type ProjectCardProps = {
   project: Project;
   locale: "es" | "en";
+  featured?: boolean;
 };
 
-export default function ProjectCard({ project, locale }: ProjectCardProps) {
+export default function ProjectCard({ project, locale, featured }: ProjectCardProps) {
   const title = project.title[locale];
   const description = project.description[locale];
 
   return (
-    <motion.article
-      className="glass-card overflow-hidden group"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.3 }}
-    >
-      {/* Image */}
+    <article className="surface-card surface-card-hover overflow-hidden">
+      {/* Image — bleeds to edges */}
       {project.images.length > 0 && (
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative aspect-video overflow-hidden">
           <img
             src={project.images[0]}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="w-full h-full object-cover"
             loading="lazy"
           />
-          {project.featured && (
-            <span className="absolute top-3 right-3 glass px-2 py-1 text-xs font-mono text-accent rounded-full">
-              ★ Featured
-            </span>
-          )}
         </div>
       )}
 
       {/* Content */}
-      <div className="p-5">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs font-mono text-text-secondary">
+      <div className="p-6">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="font-mono text-xs text-text-tertiary">
             {project.year}
           </span>
+          {featured && (
+            <span className="font-mono text-xs text-accent">◆ Featured</span>
+          )}
         </div>
-        <h3 className="text-lg font-semibold text-text-primary mb-2">
+        <h3 className="text-2xl font-semibold text-text-primary -tracking-0.01em mb-2">
           {title}
         </h3>
-        <p className="text-sm text-text-secondary mb-4 line-clamp-2">
+        <p className="text-sm text-text-secondary leading-relaxed mb-4 line-clamp-2">
           {description}
         </p>
 
-        {/* Technologies */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {project.technologies.slice(0, 4).map((tech) => (
-            <TechBadge key={tech} name={tech} />
-          ))}
-          {project.technologies.length > 4 && (
-            <span className="text-xs font-mono text-text-secondary self-center">
-              +{project.technologies.length - 4}
+        {/* Technologies as text */}
+        <div className="flex flex-wrap gap-x-0 gap-y-1 mb-5">
+          {project.technologies.map((tech, i) => (
+            <span key={tech} className="tech-label">
+              {i > 0 && <span className="text-text-tertiary mx-1">·</span>}
+              {tech}
             </span>
-          )}
+          ))}
         </div>
 
         {/* Links */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-5">
           <Link
             href={`/projects/${project.slug}` as "/"}
-            className="text-sm text-accent hover:text-accent-hover transition-colors font-medium"
+            className="text-sm font-mono uppercase tracking-widest text-accent hover:text-accent-hover transition-colors duration-150"
           >
             View Project →
           </Link>
@@ -78,13 +67,14 @@ export default function ProjectCard({ project, locale }: ProjectCardProps) {
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-text-secondary hover:text-accent transition-colors"
+              className="text-sm font-mono uppercase tracking-widest text-text-tertiary hover:text-accent transition-colors duration-150"
             >
               GitHub
             </a>
           )}
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }
+

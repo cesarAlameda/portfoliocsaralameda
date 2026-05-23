@@ -17,32 +17,33 @@ export default function ContactSection({ profile }: Props) {
 
   const contactItems = [
     {
-      label: t("linkedin_label"),
+      label: "LinkedIn",
       href: profile.social.linkedin,
-      icon: "in",
       external: true,
     },
     {
-      label: t("github_label"),
+      label: "GitHub",
       href: profile.social.github,
-      icon: "GH",
       external: true,
     },
     {
-      label: t("email_label"),
+      label: "Email",
       href: `mailto:${profile.social.email}`,
-      icon: "@",
       external: false,
     },
   ];
 
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="max-w-3xl mx-auto relative z-10">
+        <SectionTitle
+          title={t("title")}
+          subtitle={t("subtitle")}
+          sectionNumber="05"
+        />
 
         <motion.p
-          className="text-text-secondary text-center mb-8 max-w-xl mx-auto leading-relaxed"
+          className="text-text-secondary mb-10 max-w-lg leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -52,7 +53,7 @@ export default function ContactSection({ profile }: Props) {
         </motion.p>
 
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-8"
+          className="flex flex-col gap-4 mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -62,19 +63,18 @@ export default function ContactSection({ profile }: Props) {
             <CTAButton
               key={item.label}
               href={item.href}
-              variant="secondary"
+              variant="outline"
               target={item.external ? "_blank" : undefined}
               rel={item.external ? "noopener noreferrer" : undefined}
               ariaLabel={item.label}
             >
-              <span className="font-mono text-xs">{item.icon}</span>
+              <span className="font-mono text-xs text-accent mr-2">◆</span>
               {item.label}
             </CTAButton>
           ))}
         </motion.div>
 
         <motion.div
-          className="text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function ContactSection({ profile }: Props) {
             variant="primary"
             ariaLabel={t("download_cv")}
           >
-            {t("download_cv")} ↓
+            {t("download_cv")}
           </CTAButton>
         </motion.div>
       </div>

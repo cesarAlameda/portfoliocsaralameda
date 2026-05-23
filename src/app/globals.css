@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
-/* ─── Glassmorphism Theme ─── */
+/* ─── Editorial Brutalist Theme ─── */
 @theme {
-  --color-bg-primary: #0a0a0f;
-  --color-bg-secondary: #12121a;
-  --color-bg-glass: rgba(255, 255, 255, 0.04);
-  --color-bg-glass-hover: rgba(255, 255, 255, 0.08);
-  --color-border-glass: rgba(255, 255, 255, 0.08);
-  --color-border-glass-hover: rgba(255, 255, 255, 0.14);
-  --color-text-primary: #f0f0f0;
-  --color-text-secondary: #a0a0b0;
-  --color-accent: #60a5fa;
-  --color-accent-hover: #93c5fd;
-  --color-accent-muted: rgba(96, 165, 250, 0.15);
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --color-bg-primary: #0d0d0b;
+  --color-bg-secondary: #161614;
+  --color-surface: #1c1c1a;
+  --color-surface-hover: #222220;
+  --color-border: #2a2a28;
+  --color-border-hover: #3a3a36;
+  --color-border-accent: #d4a047;
+  --color-text-primary: #e8e4dc;
+  --color-text-secondary: #8a867e;
+  --color-text-tertiary: #5a5854;
+  --color-accent: #d4a047;
+  --color-accent-hover: #e0b050;
+  --color-accent-muted: rgba(212, 160, 71, 0.1);
+  --font-sans: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
 
@@ -30,35 +32,59 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Glassmorphism Utilities ─── */
-@utility glass {
-  background: var(--color-bg-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--color-border-glass);
-  border-radius: 12px;
+/* ─── Surface Card — replaces glass-card ─── */
+@utility surface-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: border-color 150ms ease-in-out, background-color 150ms ease-in-out;
 }
 
-@utility glass-hover {
+@utility surface-card-hover {
   &:hover {
-    background: var(--color-bg-glass-hover);
-    border-color: var(--color-border-glass-hover);
+    border-color: var(--color-accent);
+    background: var(--color-surface-hover);
   }
 }
 
-@utility glass-card {
-  background: var(--color-bg-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--color-border-glass);
-  border-radius: 16px;
-  transition: all 0.2s ease;
+/* ─── Section Separator ─── */
+@utility section-separator {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 1px;
+  background: var(--color-border);
+  border: none;
+}
 
-  &:hover {
-    background: var(--color-bg-glass-hover);
-    border-color: var(--color-border-glass-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+/* ─── Section Number (decorative) ─── */
+@utility section-number {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 10rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text-primary);
+  opacity: 0.04;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ─── Tech Label (replaces badges) ─── */
+@utility tech-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+@utility tech-label-separator {
+  &::after {
+    content: " · ";
+    color: var(--color-text-tertiary);
+  }
+  &:last-child::after {
+    content: none;
   }
 }
 
@@ -70,7 +96,7 @@ body {
 
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -78,11 +104,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  background: var(--color-border);
+  border-radius: 0;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--color-border-hover);
   }
 }
 

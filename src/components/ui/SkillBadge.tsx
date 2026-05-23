@@ -1,36 +1,34 @@
 import type { Skill } from "@/lib/schema";
-import { SKILL_CATEGORY_LABELS } from "@/lib/schema";
-
-type SkillBadgeProps = {
+type SkillLabelProps = {
   skill: Skill;
   locale: "es" | "en";
 };
 
-const levelColors: Record<string, string> = {
-  expert: "border-accent/30 text-accent",
-  advanced: "border-accent/20 text-accent/80",
-  intermediate: "border-text-secondary/20 text-text-secondary",
-  familiar: "border-text-secondary/10 text-text-secondary/60",
+const levelSymbols: Record<string, { symbol: string; className: string }> = {
+  expert: { symbol: "★", className: "text-accent" },
+  advanced: { symbol: "▸", className: "text-text-secondary" },
+  intermediate: { symbol: "●", className: "text-text-tertiary" },
+  familiar: { symbol: "○", className: "text-text-tertiary opacity-60" },
 };
 
-export default function SkillBadge({ skill, locale }: SkillBadgeProps) {
-  const levelColor = skill.level ? levelColors[skill.level] : "";
-
+const levelLabels: Record<string, { es: string; en: string }> = {
+  expert: { es: "Experto", en: "Expert" },
+  advanced: { es: "Avanzado", en: "Advanced" },
+  intermediate: { es: "Intermedio", en: "Intermediate" },
+  familiar: { es: "Familiar", en: "Familiar" },
+};
+export default function SkillLabel({ skill, locale }: SkillLabelProps) {
+  const level = skill.level || "familiar";
+  const { symbol, className } = levelSymbols[level];
+  const label = levelLabels[level][locale];
   return (
     <span
-      className={`inline-flex items-center gap-2 px-3 py-1.5 text-sm font-mono glass rounded-lg border ${levelColor}`}
-      title={`${skill.name} - ${skill.level}`}
+      className="font-mono text-sm text-text-primary"
+      title={`${skill.name} — ${label}`}
     >
-      <span
-        className={`w-1.5 h-1.5 rounded-full ${
-          skill.level === "expert"
-            ? "bg-accent"
-            : skill.level === "advanced"
-            ? "bg-accent/60"
-            : "bg-text-secondary/40"
-        }`}
-      />
+      <span className={`${className} mr-1`}>{symbol}</span>
       {skill.name}
     </span>
   );
 }
+

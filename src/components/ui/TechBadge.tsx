@@ -1,16 +1,12 @@
-type TechBadgeProps = {
+type TechLabelProps = {
   name: string;
-  size?: "sm" | "md";
 };
 
-export default function TechBadge({ name, size = "sm" }: TechBadgeProps) {
-  const sizeClasses = size === "sm" ? "px-2.5 py-0.5 text-xs" : "px-3 py-1 text-sm";
-
+export default function TechLabel({ name }: TechLabelProps) {
   return (
-    <span
-      className={`inline-block ${sizeClasses} font-mono glass rounded-full text-text-secondary hover:text-accent transition-colors`}
-    >
+    <span className="tech-label">
       {name}
     </span>
   );
 }
+

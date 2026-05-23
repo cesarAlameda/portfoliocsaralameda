@@ -15,71 +15,83 @@ export default function HeroSection({ profile }: Props) {
   const locale = useLocale() as "es" | "en";
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
-      {/* Background decoration */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/3 rounded-full blur-3xl" />
-      </div>
-
-      <div className="relative z-10 max-w-3xl mx-auto text-center">
+    <section className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 relative pt-24">
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+          {/* Left — Name & Greeting */}
+          <div className="md:w-3/5">
         <motion.p
-          className="text-accent font-mono text-sm mb-4"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+              className="font-mono text-xs uppercase tracking-widest text-accent mb-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.1 }}
         >
           {t("greeting")}
         </motion.p>
 
         <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+              className="text-[clamp(3rem,8vw,8rem)] font-bold text-text-primary leading-none -tracking-0.03em"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {profile.name}
         </motion.h1>
 
-        <motion.div
-          className="flex flex-wrap justify-center gap-2 mb-6"
+            <motion.p
+              className="mt-6 text-base sm:text-lg text-text-secondary max-w-xl leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          {profile.roles.map((role) => (
-            <span
-              key={role}
-              className="px-3 py-1 text-sm font-mono glass rounded-full text-text-secondary"
-            >
-              {role}
-            </span>
-          ))}
-        </motion.div>
-
-        <motion.p
-          className="text-lg text-text-secondary max-w-2xl mx-auto mb-8 leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
         >
           {profile.summary[locale]}
         </motion.p>
 
         <motion.div
-          className="flex flex-wrap justify-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+              className="mt-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
+              <div className="flex flex-wrap gap-3">
           <CTAButton href={profile.cv[locale]} download variant="primary">
-            {t("download_cv")} ↓
+                {t("download_cv")}
           </CTAButton>
           <CTAButton href={profile.social.linkedin} variant="outline" target="_blank" rel="noopener noreferrer">
             {t("contact_me")}
           </CTAButton>
+      </div>
         </motion.div>
+      </div>
+
+          {/* Right — Roles */}
+          <motion.div
+            className="md:w-1/3 md:text-right"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <div className="flex flex-row md:flex-col flex-wrap gap-2 md:gap-3">
+              {profile.roles.map((role) => (
+                <span
+                  key={role}
+                  className="font-mono text-sm text-text-secondary"
+                >
+                  {role}
+                </span>
+              ))}
+            </div>
+
+            {/* Secondary CTA */}
+            <div className="mt-6">
+              <CTAButton href="/#contact" variant="outline">
+                {t("contact_me")}
+              </CTAButton>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 }
+

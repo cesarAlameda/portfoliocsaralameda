@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/ui/SectionTitle";
-import GlassCard from "@/components/ui/GlassCard";
+import SurfaceCard from "@/components/ui/SurfaceCard";
 
 export default function AboutSection() {
   const t = useTranslations("about");
@@ -27,11 +27,15 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <SectionTitle title={t("title")} subtitle={t("subtitle")} />
+    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="max-w-3xl mx-auto">
+        <SectionTitle
+          title={t("title")}
+          subtitle={t("subtitle")}
+          sectionNumber="01"
+        />
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-4 relative z-10">
           {focusAreas.map((area, index) => (
             <motion.div
               key={area.title}
@@ -40,39 +44,27 @@ export default function AboutSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <GlassCard padding="lg">
-                <h3 className="text-lg font-semibold text-accent font-mono mb-3">
+              <SurfaceCard padding="lg" hover={false}>
+                <h3 className="text-base font-semibold text-accent font-mono mb-3 uppercase tracking-wider">
                   {area.title}
                 </h3>
                 <p className="text-sm text-text-secondary mb-4 leading-relaxed">
                   {area.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {area.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 text-xs font-mono glass rounded-full text-text-secondary"
-                    >
+                <div className="flex flex-wrap gap-x-1 gap-y-1">
+                  {area.tech.map((tech, i) => (
+                    <span key={tech} className="tech-label">
+                      {i > 0 && <span className="text-text-tertiary mx-1">·</span>}
                       {tech}
                     </span>
                   ))}
                 </div>
-              </GlassCard>
+              </SurfaceCard>
             </motion.div>
           ))}
         </div>
-
-        <motion.p
-          className="mt-8 text-text-secondary text-center max-w-3xl mx-auto leading-relaxed"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-        >
-          <span className="text-accent font-mono">{t("focus_title")}:</span>{" "}
-          {t("focus_backend")} {t("focus_enterprise")} {t("focus_ai")}
-        </motion.p>
       </div>
     </section>
   );
 }
+

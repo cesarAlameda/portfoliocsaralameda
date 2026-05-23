@@ -57,12 +57,14 @@ export default async function ProjectsPage({ params }: Props) {
   return (
     <>
       <Navbar />
-      <main className="pt-24 px-4 min-h-screen">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-2">
-            {t.title}
-          </h1>
-          <p className="text-text-secondary mb-8">{t.subtitle}</p>
+      <main className="pt-28 px-4 sm:px-6 lg:px-8 min-h-screen">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h1 className="text-[clamp(2rem,4vw,4rem)] font-bold text-text-primary -tracking-0.02em leading-tight">
+              {t.title}
+            </h1>
+            <p className="mt-2 text-text-secondary">{t.subtitle}</p>
+          </div>
           <ProjectsGrid projects={projects} />
         </div>
       </main>

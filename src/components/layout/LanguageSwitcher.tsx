@@ -21,10 +21,24 @@ export default function LanguageSwitcher() {
     <button
       onClick={toggleLocale}
       disabled={isPending}
-      className="glass px-3 py-1.5 text-sm font-mono text-text-secondary hover:text-accent cursor-pointer transition-colors disabled:opacity-50"
+      className="font-mono text-xs uppercase tracking-widest cursor-pointer transition-colors duration-150 disabled:opacity-50"
       aria-label={locale === "es" ? "Switch to English" : "Cambiar a Español"}
     >
-      {locale === "es" ? "EN" : "ES"}
+      <span
+        className={
+          locale === "es" ? "text-accent" : "text-text-tertiary hover:text-accent"
+        }
+      >
+        ES
+      </span>
+      <span className="text-text-tertiary px-1">/</span>
+      <span
+        className={
+          locale === "en" ? "text-accent" : "text-text-tertiary hover:text-accent"
+        }
+      >
+        EN
+      </span>
     </button>
   );
 }

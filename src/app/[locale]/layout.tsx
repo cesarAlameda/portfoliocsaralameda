@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/routing";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import esMessages from "../../../messages/es.json";
 import enMessages from "../../../messages/en.json";
 
@@ -27,16 +27,16 @@ const metadataTitles: Record<string, { title: string; description: string }> =
     },
   };
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-sans",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-jetbrains-mono",
+  variable: "--font-mono",
 });
 
 type Props = {
@@ -95,7 +95,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen bg-bg-primary text-text-primary antialiased">
         <NextIntlClientProvider messages={messages} locale={locale}>

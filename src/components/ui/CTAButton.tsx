@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
 type CTAButtonProps = {
@@ -17,11 +14,11 @@ type CTAButtonProps = {
 
 const variantClasses = {
   primary:
-    "bg-accent text-bg-primary hover:bg-accent-hover font-semibold",
+    "bg-accent text-bg-primary hover:bg-accent-hover font-bold",
   secondary:
-    "glass glass-hover text-text-primary",
+    "border border-border text-text-primary hover:border-accent hover:text-accent font-bold",
   outline:
-    "border border-border-glass text-text-secondary hover:text-accent hover:border-accent",
+    "border border-border text-text-secondary hover:text-accent hover:border-accent",
 };
 
 export default function CTAButton({
@@ -35,37 +32,30 @@ export default function CTAButton({
   rel,
   ariaLabel,
 }: CTAButtonProps) {
-  const baseClasses = `inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer ${variantClasses[variant]} ${className}`;
-
-  const motionProps = {
-    whileHover: { scale: 1.02 },
-    whileTap: { scale: 0.98 },
-  };
+  const baseClasses = `inline-flex items-center gap-2 px-5 py-3 text-sm font-sans transition-colors duration-150 cursor-pointer ${variantClasses[variant]} ${className}`;
 
   if (href) {
     return (
-      <motion.a
+      <a
         href={href}
         className={baseClasses}
         download={download}
         target={target}
         rel={rel}
         aria-label={ariaLabel}
-        {...motionProps}
       >
         {children}
-      </motion.a>
+      </a>
     );
   }
 
   return (
-    <motion.button
+    <button
       onClick={onClick}
       className={baseClasses}
       aria-label={ariaLabel}
-      {...motionProps}
     >
       {children}
-    </motion.button>
+    </button>
   );
 }

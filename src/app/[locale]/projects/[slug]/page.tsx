@@ -6,7 +6,6 @@ import { loadAllContent } from "@/lib/content-loader";
 import { generatePersonSchema, generateProjectSchema } from "@/lib/seo";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import TechBadge from "@/components/ui/TechBadge";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
@@ -69,29 +68,34 @@ export default async function ProjectDetailPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: projectSchema }}
       />
       <Navbar />
-      <main className="pt-24 px-4 min-h-screen">
-        <article className="max-w-4xl mx-auto">
+      <main className="pt-24 min-h-screen">
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <header className="mb-8">
+          <header className="mb-12">
             {project.images.length > 0 && (
-              <img
-                src={project.images[0]}
-                alt={project.title[l]}
-                className="w-full h-64 md:h-80 object-cover rounded-xl mb-6"
-              />
+              <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] mb-10">
+                <img
+                  src={project.images[0]}
+                  alt={project.title[l]}
+                  className="w-full h-64 md:h-[28rem] object-cover"
+                />
+              </div>
             )}
-            <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-2">
+            <h1 className="text-[clamp(2rem,4vw,4rem)] font-bold text-text-primary -tracking-0.02em leading-tight mb-3">
               {project.title[l]}
             </h1>
-            <p className="text-lg text-text-secondary mb-4">
+            <p className="text-base text-text-secondary mb-4 max-w-prose leading-relaxed">
               {project.description[l]}
             </p>
-            <div className="flex items-center gap-4 text-sm text-text-secondary font-mono mb-4">
+            <div className="flex items-center gap-4 font-mono text-xs text-text-tertiary mb-4">
               <span>{project.year}</span>
             </div>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {project.technologies.map((tech) => (
-                <TechBadge key={tech} name={tech} size="md" />
+            <div className="flex flex-wrap gap-x-1 gap-y-1 mb-8">
+              {project.technologies.map((tech, i) => (
+                <span key={tech} className="tech-label">
+                  {i > 0 && <span className="text-text-tertiary mx-1">·</span>}
+                  {tech}
+                </span>
               ))}
             </div>
             <div className="flex flex-wrap gap-3">
@@ -100,7 +104,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   href={project.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 glass glass-hover rounded-lg text-sm text-text-primary transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2 border border-border text-text-primary hover:border-accent hover:text-accent transition-colors duration-150 font-mono text-xs uppercase tracking-widest"
                 >
                   GitHub →
                 </a>
@@ -110,7 +114,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   href={project.links.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-bg-primary rounded-lg text-sm font-medium hover:bg-accent-hover transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-bg-primary hover:bg-accent-hover transition-colors duration-150 font-mono text-xs uppercase tracking-widest font-bold"
                 >
                   Demo →
                 </a>
@@ -118,8 +122,8 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
           </header>
 
-          {/* Content */}
-          <div className="prose prose-invert max-w-none glass-card p-6 md:p-8">
+          {/* Content — surface card, no glass */}
+          <div className="surface-card p-6 md:p-8 mb-16">
             <ReactMarkdown
               components={{
                 h1: ({ children }) => (
@@ -143,12 +147,12 @@ export default async function ProjectDetailPage({ params }: Props) {
                   </p>
                 ),
                 code: ({ children }) => (
-                  <code className="px-1.5 py-0.5 bg-bg-glass rounded text-sm font-mono text-accent">
+                  <code className="px-1.5 py-0.5 bg-bg-secondary rounded text-sm font-mono text-accent">
                     {children}
                   </code>
                 ),
                 pre: ({ children }) => (
-                  <pre className="glass p-4 rounded-lg overflow-x-auto mb-4 text-sm font-mono">
+                  <pre className="surface-card p-4 rounded overflow-x-auto mb-4 text-sm font-mono">
                     {children}
                   </pre>
                 ),
@@ -171,7 +175,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   <img
                     src={src}
                     alt={alt || ""}
-                    className="w-full rounded-lg my-4"
+                    className="w-full rounded my-4"
                     loading="lazy"
                   />
                 ),
