@@ -22,8 +22,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const project = loadProjectBySlug(slug);
+    const { locale, slug } = await params;
+  const l = locale as "es" | "en";
+  const project = loadProjectBySlug(slug, l);
 
   if (!project) return { title: "Not Found" };
 
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale === "es"
         ? `${project.title.es} | César Alameda`
         : `${project.title.en} | César Alameda`,
-    description: project.description[locale as "es" | "en"],
+    description: project.description[l],
     metadataBase: new URL(siteUrl),
     openGraph: {
       title: project.title[locale as "es" | "en"],
@@ -45,14 +46,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProjectDetailPage({ params }: Props) {
-  const { locale, slug } = await params;
-  const project = loadProjectBySlug(slug);
+    const { locale, slug } = await params;
+  const l = locale as "es" | "en";
+  const project = loadProjectBySlug(slug, l);
 
   if (!project) {
     notFound();
   }
-
-  const l = locale as "es" | "en";
   const content = loadAllContent();
   const personSchema = generatePersonSchema(content.profile);
   const projectSchema = generateProjectSchema(project);

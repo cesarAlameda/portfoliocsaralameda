@@ -31,9 +31,11 @@ export default function ProjectsGrid({ projects }: Props) {
         </motion.div>
       )}
 
-      {/* All projects in 2-column grid */}
+      {/* All projects in 2-column grid (excluding first featured to avoid duplication) */}
       <div className="grid md:grid-cols-2 gap-6">
-        {projects.map((project, index) => (
+        {projects
+          .filter((p) => p.slug !== featured[0]?.slug)
+          .map((project, index) => (
           <motion.div
             key={project.slug}
             initial={{ opacity: 0, y: 20 }}
@@ -53,3 +55,4 @@ export default function ProjectsGrid({ projects }: Props) {
     </div>
   );
 }
+

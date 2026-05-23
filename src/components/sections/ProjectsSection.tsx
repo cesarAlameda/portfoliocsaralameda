@@ -44,7 +44,7 @@ export default function ProjectsSection({ projects }: Props) {
           sectionNumber="03"
         />
 
-        {/* Asymmetric grid: first featured spans 2 cols, rest in 2-col grid */}
+        {/* Asymmetric grid: first featured spans full width, rest in 2-col grid */}
         <div className="space-y-6">
           {/* First featured — wider */}
           {featured.length > 0 && (
@@ -63,10 +63,12 @@ export default function ProjectsSection({ projects }: Props) {
             </motion.div>
           )}
 
-          {/* Remaining projects in 2-column grid */}
+          {/* Remaining projects in 2-column grid (excluding first featured to avoid duplication) */}
           {projects.length > 0 && (
             <div className="grid md:grid-cols-2 gap-6">
-              {projects.map((project, index) => (
+              {projects
+                .filter((p) => p.slug !== featured[0]?.slug)
+                .map((project, index) => (
                 <motion.div
                   key={project.slug}
                   initial={{ opacity: 0, y: 20 }}
@@ -101,3 +103,4 @@ export default function ProjectsSection({ projects }: Props) {
     </section>
   );
 }
+

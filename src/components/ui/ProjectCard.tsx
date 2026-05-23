@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import type { Project } from "@/lib/schema";
 import { Link } from "@/navigation";
 
@@ -10,6 +11,7 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({ project, locale, featured }: ProjectCardProps) {
+  const t = useTranslations("projects");
   const title = project.title[locale];
   const description = project.description[locale];
 
@@ -34,7 +36,7 @@ export default function ProjectCard({ project, locale, featured }: ProjectCardPr
             {project.year}
           </span>
           {featured && (
-            <span className="font-mono text-xs text-accent">◆ Featured</span>
+            <span className="font-mono text-xs text-accent">◆ {t("featured")}</span>
           )}
         </div>
         <h3 className="text-2xl font-semibold text-text-primary -tracking-0.01em mb-2">
@@ -60,7 +62,7 @@ export default function ProjectCard({ project, locale, featured }: ProjectCardPr
             href={`/projects/${project.slug}` as "/"}
             className="text-sm font-mono uppercase tracking-widest text-accent hover:text-accent-hover transition-colors duration-150"
           >
-            View Project →
+            {t("view_project")} →
           </Link>
           {project.links.github && (
             <a
