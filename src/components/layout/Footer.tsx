@@ -10,33 +10,29 @@ export default function Footer({ social }: Props) {
   const t = useTranslations("footer");
 
   return (
-    <footer className="border-t-2 border-border mt-24 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-8">
-          {/* Left — Name / Identity */}
+    <footer className="border-t border-border-subtle py-12 md:py-16 mt-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+          {/* Left */}
           <div>
             <Link
               href="/"
-              className="text-xl font-bold font-sans text-text-primary hover:text-accent transition-colors duration-150"
+              className="font-display text-xl text-text-primary hover:text-accent transition-colors duration-200"
             >
               César Alameda
             </Link>
-            <p className="mt-2 text-sm font-mono text-text-tertiary">
-              Backend &amp; Enterprise Software Developer
+            <p className="text-sm text-text-muted mt-2">
+              {t("built_with")}
             </p>
           </div>
 
-          {/* Center — Social Links */}
-          <div className="flex flex-col gap-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-text-tertiary mb-1">
-              Online
-            </span>
+          {/* Right: links */}
+          <div className="flex items-center gap-6">
             <a
               href={social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-text-secondary hover:text-accent transition-colors duration-150"
-              aria-label="LinkedIn"
+              className="text-sm text-text-secondary hover-link"
             >
               LinkedIn
             </a>
@@ -44,30 +40,24 @@ export default function Footer({ social }: Props) {
               href={social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-text-secondary hover:text-accent transition-colors duration-150"
-              aria-label="GitHub"
+              className="text-sm text-text-secondary hover-link"
             >
               GitHub
             </a>
             <a
               href={`mailto:${social.email}`}
-              className="text-sm text-text-secondary hover:text-accent transition-colors duration-150"
-              aria-label="Email"
+              className="text-sm text-text-secondary hover-link"
             >
               Email
             </a>
           </div>
-
-          {/* Right — Copyright & Tech */}
-          <div className="text-right">
-            <p className="text-xs text-text-tertiary">
-              © {new Date().getFullYear()} César Alameda Barquillo
-            </p>
-            <p className="mt-1 text-xs font-mono text-text-tertiary opacity-60">
-              {t("built_with")}
-            </p>
-          </div>
         </div>
+
+        <div className="mt-8 editorial-rule" />
+
+        <p className="mt-6 text-xs text-text-muted">
+          © {new Date().getFullYear()} César Alameda. {t("copyright")}
+        </p>
       </div>
     </footer>
   );

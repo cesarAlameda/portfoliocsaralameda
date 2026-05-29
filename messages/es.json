@@ -1,68 +1,75 @@
 {
   "nav": {
     "home": "Inicio",
-    "about": "Sobre Mí",
-    "experience": "Experiencia",
+    "about": "Sobre mí",
+    "experience": "Trayectoria",
     "projects": "Proyectos",
-    "skills": "Habilidades",
+    "skills": "Skills",
     "contact": "Contacto"
   },
   "hero": {
-    "greeting": "Hola, soy",
+    "greeting": "Hola, me llamo",
     "download_cv": "Descargar CV",
     "contact_me": "Contactar"
   },
   "about": {
-    "title": "Sobre Mí",
-    "subtitle": "Desarrollador Backend & Software Empresarial",
-    "focus_title": "Áreas de enfoque",
-    "focus_backend": "Desarrollo backend con Java, Spring Boot y PostgreSQL, construyendo APIs robustas y sistemas escalables.",
-    "focus_enterprise": "Integraciones ERP con a3ERP, .NET y C#, desarrollando soluciones empresariales a medida.",
-    "focus_ai": "Explorando integraciones con IA, flujos de automatización y sistemas inteligentes para construir soluciones empresariales más eficientes."
+    "title": "Sobre mí",
+    "subtitle": "Llevo unos años desarrollando software, sobre todo backend. Me gusta entender el negocio y construir cosas que realmente funcionen.",
+    "label": "Enfoque",
+    "focus_backend_title": "Backend",
+    "focus_backend": "Java, Spring Boot y PostgreSQL. Construyo APIs, conecto servicios y procuro que todo sea mantenible, testeable y razonablemente rápido.",
+    "focus_enterprise_title": "Empresa",
+    "focus_enterprise": "He trabajado integrando a3ERP, .NET y C#. Ahí aprendes que el código bonito no sirve de nada si no resuelve el problema de quien lo usa.",
+    "focus_ai_title": "IA y Automatización",
+    "focus_ai": "Estoy explorando cómo integrar IA en procesos empresariales. No para hacer prompts bonitos, sino para automatizar tareas que nadie quiere hacer."
   },
   "experience": {
     "title": "Experiencia",
-    "subtitle": "Trayectoria profesional en desarrollo de software",
+    "subtitle": "Dónde he trabajado y qué he hecho.",
+    "label": "Trayectoria",
     "present": "Actualidad",
-    "other_title": "Otra Experiencia"
+    "other_title": "Otra experiencia"
   },
   "projects": {
     "title": "Proyectos",
-    "subtitle": "Trabajos destacados y proyectos personales",
+    "subtitle": "Algunas cosas que he construido, por gusto o por necesidad.",
+    "label": "Trabajos",
     "view_all": "Ver todos los proyectos",
     "view_project": "Ver proyecto",
     "view_github": "Ver en GitHub",
     "view_demo": "Ver demo",
     "featured": "Destacado",
-    "no_projects": "No hay proyectos disponibles actualmente."
+    "no_projects": "No hay proyectos disponibles ahora mismo."
   },
   "skills": {
-    "title": "Habilidades Técnicas",
-    "subtitle": "Tecnologías y herramientas con las que trabajo"
+    "title": "Skills",
+    "subtitle": "Tecnologías con las que he trabajado, ordenadas por nivel de soltura.",
+    "label": "Stack"
   },
   "contact": {
     "title": "Contacto",
-    "subtitle": "Conectemos",
-    "description": "Si tienes un proyecto interesante o quieres colaborar, no dudes en contactarme.",
+    "subtitle": "Háblame si quieres.",
+    "label": "Conectar",
+    "description": "Si tienes un proyecto, una idea o simplemente quieres hablar de tecnología, mándame un mensaje. Respondo más rápido por email que por LinkedIn.",
     "email_label": "Enviar correo",
-    "linkedin_label": "Visitar LinkedIn",
-    "github_label": "Visitar GitHub",
+    "linkedin_label": "LinkedIn",
+    "github_label": "GitHub",
     "download_cv": "Descargar CV"
   },
   "footer": {
     "copyright": "Todos los derechos reservados.",
-    "built_with": "Construido con Next.js, TailwindCSS y TypeScript"
+    "built_with": "Hecho con Next.js, TailwindCSS y TypeScript. Sin templates."
   },
   "not_found": {
-    "title": "Página no encontrada",
-    "description": "La página que buscas no existe o ha sido movida.",
+    "title": "No está aquí",
+    "description": "La página que buscas no existe o la he movido sin avisar.",
     "go_home": "Volver al inicio"
   },
   "metadata": {
-    "home_title": "César Alameda | Desarrollador Backend, Empresarial e IA",
-    "home_description": "Desarrollador backend especializado en Java, Spring Boot, PostgreSQL, integraciones ERP y automatización con IA. Descubre mi portfolio, proyectos y experiencia profesional.",
+    "home_title": "César Alameda | Backend, Empresa e IA",
+    "home_description": "Backend developer en Madrid. Java, Spring Boot, PostgreSQL, a3ERP, .NET y explorando IA para automatización empresarial.",
     "projects_title": "Proyectos | César Alameda",
-    "projects_description": "Explora mis proyectos destacados: desarrollo backend, integraciones ERP, soluciones empresariales e investigación en automatización con IA."
+    "projects_description": "Proyectos de César Alameda: desarrollo backend, integraciones ERP, apps Android, automatización con IA."
   }
 }
 

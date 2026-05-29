@@ -1,6 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
-  <rect width="800" height="450" fill="#1a1a2e"/>
-  <text x="400" y="200" font-family="Arial, sans-serif" font-size="24" fill="#60a5fa" text-anchor="middle" font-weight="bold">Hotel Reservation System</text>
-  <text x="400" y="240" font-family="Arial, sans-serif" font-size="14" fill="#a0a0b0" text-anchor="middle">Java · Spring Boot · PostgreSQL</text>
-  <rect x="300" y="280" width="200" height="4" rx="2" fill="#60a5fa" opacity="0.5"/>
+  <rect width="800" height="450" fill="#0d0d0b"/>
+  <!-- Minimal grid -->
+  <g opacity="0.05" stroke="#d4a047" stroke-width="0.4">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="200" y1="0" x2="200" y2="450"/><line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+  </g>
+  <!-- Corner brackets -->
+  <path d="M30,28 h30 M30,28 v30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M770,28 h-30 M770,28 v30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M30,422 h30 M30,422 v-30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M770,422 h-30 M770,422 v-30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <!-- Abstract hotel/building icon -->
+  <g transform="translate(340, 120)" stroke="#d4a047" fill="none">
+    <rect x="0" y="30" width="120" height="90" rx="2" stroke-width="1.2" opacity="0.5"/>
+    <rect x="15" y="45" width="20" height="28" rx="1" stroke-width="0.8" opacity="0.35"/>
+    <rect x="50" y="45" width="20" height="28" rx="1" stroke-width="0.8" opacity="0.35"/>
+    <rect x="85" y="45" width="20" height="28" rx="1" stroke-width="0.8" opacity="0.35"/>
+    <rect x="15" y="82" width="20" height="28" rx="1" stroke-width="0.8" opacity="0.35"/>
+    <rect x="50" y="82" width="20" height="28" rx="1" stroke-width="0.8" opacity="0.35"/>
+    <!-- Door -->
+    <rect x="85" y="82" width="20" height="28" rx="1" stroke-width="0.8" opacity="0.5"/>
+    <rect x="45" y="5" width="30" height="20" rx="1" stroke-width="0.8" opacity="0.25"/>
+    <line x1="60" y1="5" x2="60" y2="25" stroke-width="0.5" opacity="0.2"/>
+    <line x1="45" y1="15" x2="75" y2="15" stroke-width="0.5" opacity="0.2"/>
+  </g>
+  <!-- Title -->
+  <text x="400" y="390" font-family="'Space Grotesk', system-ui, sans-serif" font-size="21" fill="#e8e4dc" text-anchor="middle" font-weight="600" letter-spacing="-0.01em">Hotel Reservation System</text>
+  <text x="400" y="414" font-family="'Space Grotesk', system-ui, sans-serif" font-size="11" fill="#8a867e" text-anchor="middle" letter-spacing="0.02em">Java · Spring Boot · PostgreSQL</text>
 </svg>

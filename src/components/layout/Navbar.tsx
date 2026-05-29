@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "@/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -17,15 +17,28 @@ const navSections = [
 export default function Navbar() {
   const t = useTranslations("nav");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg-primary border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo — text-based full name */}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-bg-primary/85 backdrop-blur-lg border-b border-border-subtle"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="flex items-center justify-between h-16 md:h-18">
+          {/* Logo */}
           <Link
             href="/"
-            className="text-base font-bold font-sans text-text-primary hover:text-accent transition-colors duration-150"
+            className="font-display text-xl text-text-primary tracking-tight hover:text-accent transition-colors duration-200"
           >
             César Alameda
           </Link>
@@ -36,7 +49,7 @@ export default function Navbar() {
               <Link
                 key={section.key}
                 href={section.href as "/"}
-                className="text-xs font-mono uppercase tracking-widest text-text-secondary hover:text-accent transition-colors duration-150"
+                className="text-sm text-text-secondary hover-link transition-colors"
               >
                 {t(section.key as any)}
               </Link>
@@ -53,17 +66,22 @@ export default function Navbar() {
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
               <svg
-                width="24"
-                height="24"
+                width="22"
+                height="22"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
+                strokeWidth="1.5"
+                strokeLinecap="round"
               >
                 {mobileOpen ? (
                   <path d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
+                  <>
+                    <path d="M4 7h16" />
+                    <path d="M4 12h16" />
+                    <path d="M4 17h16" />
+                  </>
                 )}
               </svg>
             </button>
@@ -73,13 +91,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-bg-secondary border-t border-border">
-          <div className="px-4 py-3 space-y-2">
+        <div className="md:hidden bg-bg-primary/95 backdrop-blur-lg border-b border-border-subtle">
+          <div className="px-5 py-4 space-y-3">
             {navSections.map((section) => (
               <Link
                 key={section.key}
                 href={section.href as "/"}
-                className="block py-2 text-sm font-mono uppercase tracking-widest text-text-secondary hover:text-accent transition-colors duration-150"
+                className="block py-2 text-base text-text-secondary hover:text-accent transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {t(section.key as any)}

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/routing";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import esMessages from "../../../messages/es.json";
 import enMessages from "../../../messages/en.json";
 
@@ -14,29 +14,34 @@ const messagesMap = {
 const metadataTitles: Record<string, { title: string; description: string }> =
   {
     es: {
-      title:
-        "César Alameda | Desarrollador Backend & Software Empresarial",
+      title: "César Alameda | Backend, Empresa e IA",
       description:
-        "Desarrollador backend especializado en Java, Spring Boot, PostgreSQL e integraciones ERP. Descubre mi portfolio, proyectos y experiencia profesional.",
+        "Backend developer en Madrid. Java, Spring Boot, PostgreSQL, a3ERP, .NET y explorando IA para automatización empresarial.",
     },
     en: {
-      title:
-        "César Alameda | Backend & Enterprise Software Developer",
+      title: "César Alameda | Backend, Enterprise & AI",
       description:
-        "Backend developer specialized in Java, Spring Boot, PostgreSQL, and ERP integrations. Discover my portfolio, projects, and professional experience.",
+        "Backend developer in Madrid. Java, Spring Boot, PostgreSQL, a3ERP, .NET, and exploring AI for business automation.",
     },
   };
 
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-sans",
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-mono",
+  variable: "--font-jetbrains-mono",
 });
 
 type Props = {
@@ -54,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const l = locale as "es" | "en";
   const t = metadataTitles[l];
-  const siteUrl = "https://cesaralameda.github.io/portfoliocsaralameda";
+  const siteUrl = "https://cesaralameda.dev";
 
   return {
     title: t.title,
@@ -63,7 +68,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: t.title,
       description: t.description,
-      siteName: "César Alameda | Backend Developer",
+      siteName: "César Alameda",
       locale: l === "es" ? "es_ES" : "en_US",
       type: "website",
     },
@@ -95,7 +100,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen bg-bg-primary text-text-primary antialiased">
         <NextIntlClientProvider messages={messages} locale={locale}>

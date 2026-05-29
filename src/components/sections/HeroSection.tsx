@@ -1,9 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
-import { motion } from "framer-motion";
-import CTAButton from "@/components/ui/CTAButton";
+import { Link } from "@/navigation";
 import type { Profile } from "@/lib/schema";
 
 type Props = {
@@ -13,85 +13,86 @@ type Props = {
 export default function HeroSection({ profile }: Props) {
   const t = useTranslations("hero");
   const locale = useLocale() as "es" | "en";
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
 
   return (
-    <section className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 relative pt-24">
-      <div className="w-full max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
-          {/* Left — Name & Greeting */}
-          <div className="md:w-3/5">
-        <motion.p
-              className="font-mono text-xs uppercase tracking-widest text-accent mb-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-        >
-          {t("greeting")}
-        </motion.p>
-
-        <motion.h1
-              className="text-[clamp(3rem,8vw,8rem)] font-bold text-text-primary leading-none -tracking-0.03em"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          {profile.name}
-        </motion.h1>
-
-            <motion.p
-              className="mt-6 text-base sm:text-lg text-text-secondary max-w-xl leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          {profile.summary[locale]}
-        </motion.p>
-
-        <motion.div
-              className="mt-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-              <div className="flex flex-wrap gap-3">
-          <CTAButton href={profile.cv[locale]} download variant="primary">
-                {t("download_cv")}
-          </CTAButton>
-          <CTAButton href={profile.social.linkedin} variant="outline" target="_blank" rel="noopener noreferrer">
-            {t("contact_me")}
-          </CTAButton>
-      </div>
-        </motion.div>
+    <section className="min-h-screen flex items-center px-5 sm:px-8 lg:px-10 relative overflow-hidden">
+      {/* Quiet background texture — very subtle */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[20%] left-[-10%] w-[40vw] h-[40vw] rounded-full border border-border-subtle opacity-[0.03]" />
+        <div className="absolute bottom-[15%] right-[-5%] w-[25vw] h-[25vw] rounded-full border border-border-subtle opacity-[0.03]" />
       </div>
 
-          {/* Right — Roles */}
-          <motion.div
-            className="md:w-1/3 md:text-right"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <div className="flex flex-row md:flex-col flex-wrap gap-2 md:gap-3">
-              {profile.roles.map((role) => (
-                <span
-                  key={role}
-                  className="font-mono text-sm text-text-secondary"
-                >
-                  {role}
-                </span>
-              ))}
-            </div>
+      <div className="relative z-10 w-full max-w-6xl mx-auto">
+        <div
+          className={`transition-all duration-700 ease-out ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          {/* Eyebrow — no monospace greeting */}
+          <p className="text-sm text-text-muted font-sans mb-4 tracking-wide">
+            {t("greeting")}
+          </p>
 
-            {/* Secondary CTA */}
-            <div className="mt-6">
-              <CTAButton href="/#contact" variant="outline">
-                {t("contact_me")}
-              </CTAButton>
-            </div>
-          </motion.div>
+          {/* Name — display serif, large */}
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-text-primary leading-[0.95] tracking-tight font-semibold max-w-4xl">
+            {profile.name}
+          </h1>
+
+          {/* Roles — as a sentence, not badge pills */}
+          <p className="mt-5 text-xl md:text-2xl text-text-secondary font-sans leading-snug max-w-2xl">
+            {profile.roles.join(" · ")}
+          </p>
+
+          {/* Location + research interest */}
+          <p className="mt-3 text-sm text-text-muted">
+            {profile.location}
+          </p>
+
+          {/* Summary — editorial block */}
+          <div className="mt-8 block-decor max-w-xl">
+            <p className="text-base md:text-lg text-text-primary leading-relaxed font-sans">
+              {profile.summary[locale]}
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-10 flex flex-wrap gap-4 items-center">
+            <a
+              href={profile.cv[locale]}
+              download
+              className="group inline-flex items-center gap-2 px-0 text-sm text-text-primary font-sans tracking-wide transition-colors duration-200 hover-link"
+            >
+              {t("download_cv")}
+              <span className="inline-block transition-transform duration-200 group-hover:translate-y-0.5">
+                ↓
+              </span>
+            </a>
+            <span className="text-text-muted text-xs">/</span>
+            <a
+              href={profile.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-0 text-sm text-text-secondary font-sans hover-link"
+            >
+              LinkedIn
+            </a>
+            <span className="text-text-muted text-xs">/</span>
+            <a
+              href={profile.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-0 text-sm text-text-secondary font-sans hover-link"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-

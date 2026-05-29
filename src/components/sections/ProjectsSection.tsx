@@ -17,12 +17,33 @@ export default function ProjectsSection({ projects }: Props) {
   const locale = useLocale() as "es" | "en";
 
   const featured = projects.filter((p) => p.featured);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const cards = el.querySelectorAll<HTMLElement>(".js-reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={sectionRef}>
       {/* SVG decorative geometry */}
       <svg
-        className="absolute -top-24 -right-32 w-96 h-96 opacity-[0.03] pointer-events-none select-none"
+        className="absolute top-0 right-0 w-[32rem] h-[32rem] opacity-[0.015] pointer-events-none select-none"
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +68,7 @@ export default function ProjectsSection({ projects }: Props) {
         <div className="space-y-6">
           {/* First featured — wider */}
           {featured.length > 0 && (
-            <div className="md:col-span-2 reveal-card visible">
+            <div className="md:col-span-2 js-reveal" style={{ transitionDelay: "0s" }}>
               <ProjectCard
                 project={featured[0]}
                 locale={locale}
@@ -64,8 +85,8 @@ export default function ProjectsSection({ projects }: Props) {
                 .map((project, index) => (
                 <div
                   key={project.slug}
-                  className="project-card"
-                  style={{ transitionDelay: `${index * 0.06}s` }}
+                  className="js-reveal"
+                  style={{ transitionDelay: `${0.08 + index * 0.05}s` }}
                 >
                   <ProjectCard
                     project={project}
@@ -85,10 +106,11 @@ export default function ProjectsSection({ projects }: Props) {
         <div className="mt-10">
           <Link
             href="/projects"
-            className="font-mono text-xs uppercase tracking-widest text-accent hover:text-accent-hover transition-colors duration-150 group"
+            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-text-tertiary hover:text-accent transition-colors duration-150 group"
           >
+            <span className="w-8 h-px bg-accent/40 group-hover:w-12 transition-all duration-300" />
             {t("view_all")}
-            <span className="inline-block ml-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
+            <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </Link>
         </div>
       </div>

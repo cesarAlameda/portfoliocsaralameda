@@ -13,56 +13,63 @@
     "contact_me": "Contact Me"
   },
   "about": {
-    "title": "About Me",
-    "subtitle": "Backend & Enterprise Software Developer",
-    "focus_title": "Focus Areas",
-    "focus_backend": "Backend development with Java, Spring Boot, and PostgreSQL, building robust APIs and scalable systems.",
-    "focus_enterprise": "ERP integrations with a3ERP, .NET, and C#, developing custom enterprise solutions.",
-    "focus_ai": "Exploring AI integrations, automation workflows, and intelligent systems to build smarter enterprise solutions."
+    "title": "About",
+    "subtitle": "I've been building backend software for a few years. I like understanding the business side and making things that actually work.",
+    "label": "Focus",
+    "focus_backend_title": "Backend",
+    "focus_backend": "Java, Spring Boot, PostgreSQL. I build APIs, connect services, and try to keep things maintainable, testable, and reasonably fast.",
+    "focus_enterprise_title": "Enterprise",
+    "focus_enterprise": "Worked with a3ERP integrations, .NET, and C#. That taught me that clean code is useless if it doesn't solve the user's problem.",
+    "focus_ai_title": "AI & Automation",
+    "focus_ai": "Exploring how to integrate AI into business workflows. Not for fancy demos, but to automate the tasks nobody wants to do manually."
   },
   "experience": {
     "title": "Experience",
-    "subtitle": "Professional journey in software development",
+    "subtitle": "Where I've worked and what I did.",
+    "label": "Timeline",
     "present": "Present",
     "other_title": "Other Experience"
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Featured work and personal projects",
+    "subtitle": "Things I've built, for work or for fun.",
+    "label": "Work",
     "view_all": "View all projects",
     "view_project": "View project",
     "view_github": "View on GitHub",
     "view_demo": "View demo",
     "featured": "Featured",
-    "no_projects": "No projects available at the moment."
+    "no_projects": "No projects available right now."
   },
   "skills": {
-    "title": "Technical Skills",
-    "subtitle": "Technologies and tools I work with"
+    "title": "Skills",
+    "subtitle": "Technologies I've worked with, roughly ordered by comfort level.",
+    "label": "Stack"
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Let's Connect",
-    "description": "If you have an interesting project or want to collaborate, feel free to reach out.",
+    "subtitle": "Reach out if you want.",
+    "label": "Connect",
+    "description": "If you have a project, an idea, or just want to talk tech, send me a message. I reply faster to email than LinkedIn.",
     "email_label": "Send email",
-    "linkedin_label": "Visit LinkedIn",
-    "github_label": "Visit GitHub",
+    "linkedin_label": "LinkedIn",
+    "github_label": "GitHub",
     "download_cv": "Download CV"
   },
   "footer": {
     "copyright": "All rights reserved.",
-    "built_with": "Built with Next.js, TailwindCSS, and TypeScript"
+    "built_with": "Built with Next.js, TailwindCSS, and TypeScript. No templates."
   },
   "not_found": {
-    "title": "Page Not Found",
-    "description": "The page you're looking for doesn't exist or has been moved.",
+    "title": "Not here",
+    "description": "The page you're looking for doesn't exist or I moved it without telling anyone.",
     "go_home": "Go back home"
   },
   "metadata": {
-    "home_title": "César Alameda | Backend, Enterprise & AI Integration Developer",
-    "home_description": "Backend developer specialized in Java, Spring Boot, PostgreSQL, ERP integrations, and AI automation. Discover my portfolio, projects, and professional experience.",
+    "home_title": "César Alameda | Backend, Enterprise & AI",
+    "home_description": "Backend developer in Madrid. Java, Spring Boot, PostgreSQL, a3ERP, .NET, and exploring AI for business automation.",
     "projects_title": "Projects | César Alameda",
-    "projects_description": "Explore my featured projects: backend development, ERP integrations, enterprise solutions, and AI automation research."
+    "projects_description": "Projects by César Alameda: backend development, ERP integrations, Android apps, AI automation."
   }
 }
 
