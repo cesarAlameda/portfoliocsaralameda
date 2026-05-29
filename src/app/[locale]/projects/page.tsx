@@ -57,8 +57,25 @@ export default async function ProjectsPage({ params }: Props) {
   return (
     <>
       <Navbar />
-      <main className="pt-28 px-4 sm:px-6 lg:px-8 min-h-screen">
-        <div className="max-w-7xl mx-auto">
+      <main className="pt-28 px-4 sm:px-6 lg:px-8 min-h-screen relative overflow-hidden">
+        {/* SVG decorative geometry */}
+        <svg
+          className="absolute -top-40 -right-20 w-[500px] h-[500px] opacity-[0.025] pointer-events-none select-none"
+          viewBox="0 0 500 500"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <rect x="40" y="40" width="420" height="420" rx="12" stroke="#d4a047" strokeWidth="0.5" />
+          <rect x="70" y="70" width="360" height="360" rx="8" stroke="#d4a047" strokeWidth="0.4" />
+          <circle cx="250" cy="250" r="160" stroke="#d4a047" strokeWidth="0.4" />
+          <circle cx="250" cy="250" r="110" stroke="#d4a047" strokeWidth="0.3" />
+          <circle cx="250" cy="250" r="60" stroke="#d4a047" strokeWidth="0.25" />
+          <line x1="90" y1="250" x2="410" y2="250" stroke="#d4a047" strokeWidth="0.3" />
+          <line x1="250" y1="90" x2="250" y2="410" stroke="#d4a047" strokeWidth="0.3" />
+        </svg>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-12">
             <h1 className="text-[clamp(2rem,4vw,4rem)] font-bold text-text-primary -tracking-0.02em leading-tight">
               {t.title}

@@ -19,7 +19,7 @@
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
 
-/* ─── Base Styles ─── */
+/* ─── Base ─── */
 html {
   scroll-behavior: smooth;
 }
@@ -30,6 +30,12 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--color-accent-muted);
+  color: var(--color-accent);
 }
 
 /* ─── Surface Card — replaces glass-card ─── */
@@ -88,19 +94,48 @@ body {
   }
 }
 
-/* ─── Selection ─── */
-::selection {
-  background: var(--color-accent-muted);
+/* ─── Editorial Rule ─── */
+@utility editorial-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-border) 20%,
+    var(--color-border) 80%,
+    transparent 100%
+  );
+}
+
+@utility editorial-rule-accent {
+  width: 48px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+/* ─── Tag (papel arrancado) ─── */
+@utility tag {
+  display: inline-block;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.7rem;
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  background: var(--color-surface);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.tag:hover {
   color: var(--color-accent);
+  border-color: var(--color-border-accent);
+  background: var(--color-accent-muted);
 }
 
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
   width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -112,12 +147,11 @@ body {
   }
 }
 
-/* ─── Reduced Motion ─── */
+/* ─── Reduced motion ─── */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
@@ -126,4 +160,120 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ─── Hover link effect ─── */
+.hover-link {
+  position: relative;
+  transition: color 0.2s;
+}
+
+.hover-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.hover-link:hover {
+  color: var(--color-accent);
+}
+
+/* ─── Image treatment ─── */
+@utility img-frame {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* ─── Block Quote Decoration ─── */
+@utility block-decor {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.block-decor::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 2px;
+  background: var(--color-accent);
+  opacity: 0.5;
+}
+
+/* ─── Fade-in utility for scroll reveals ─── */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Accent underline ─── */
+.accent-underline {
+  background-image: linear-gradient(
+    to right,
+    var(--color-accent-muted) 0%,
+    var(--color-accent-muted) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
+
+/* ─── Taste refinements: project card reveal ─── */
+@utility reveal-card {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Project card in grid ─── */
+@utility project-card {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.5s ease-out,
+              transform 0.5s ease-out;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Image subtle zoom container ─── */
+@utility img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.img-zoom:hover img {
+  transform: scale(1.03);
 }

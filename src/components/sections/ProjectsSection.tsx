@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
-import { motion } from "framer-motion";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { Link } from "@/navigation";
@@ -18,25 +18,24 @@ export default function ProjectsSection({ projects }: Props) {
 
   const featured = projects.filter((p) => p.featured);
 
-  if (featured.length === 0) {
-    return (
-      <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <SectionTitle
-            title={t("title")}
-            subtitle={t("subtitle")}
-            sectionNumber="03"
-          />
-          <p className="text-text-secondary font-mono text-sm">
-            {t("no_projects")}
-          </p>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* SVG decorative geometry */}
+      <svg
+        className="absolute -top-24 -right-32 w-96 h-96 opacity-[0.03] pointer-events-none select-none"
+        viewBox="0 0 400 400"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <rect x="40" y="40" width="320" height="320" rx="8" stroke="#d4a047" strokeWidth="0.5" />
+        <rect x="60" y="60" width="280" height="280" rx="6" stroke="#d4a047" strokeWidth="0.5" />
+        <circle cx="200" cy="200" r="120" stroke="#d4a047" strokeWidth="0.4" />
+        <circle cx="200" cy="200" r="80" stroke="#d4a047" strokeWidth="0.3" />
+        <line x1="80" y1="200" x2="320" y2="200" stroke="#d4a047" strokeWidth="0.3" />
+        <line x1="200" y1="80" x2="200" y2="320" stroke="#d4a047" strokeWidth="0.3" />
+      </svg>
+
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionTitle
           title={t("title")}
@@ -48,33 +47,25 @@ export default function ProjectsSection({ projects }: Props) {
         <div className="space-y-6">
           {/* First featured — wider */}
           {featured.length > 0 && (
-            <motion.div
-              className="md:col-span-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4 }}
-            >
+            <div className="md:col-span-2 reveal-card visible">
               <ProjectCard
                 project={featured[0]}
                 locale={locale}
                 featured={true}
               />
-            </motion.div>
+            </div>
           )}
 
-          {/* Remaining projects in 2-column grid (excluding first featured to avoid duplication) */}
+          {/* Remaining projects in 2-column grid */}
           {projects.length > 0 && (
             <div className="grid md:grid-cols-2 gap-6">
               {projects
                 .filter((p) => p.slug !== featured[0]?.slug)
                 .map((project, index) => (
-                <motion.div
+                <div
                   key={project.slug}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="project-card"
+                  style={{ transitionDelay: `${index * 0.06}s` }}
                 >
                   <ProjectCard
                     project={project}
@@ -84,7 +75,7 @@ export default function ProjectsSection({ projects }: Props) {
                       project.slug !== featured[0]?.slug
                     }
                   />
-                </motion.div>
+                </div>
               ))}
             </div>
           )}
@@ -94,13 +85,13 @@ export default function ProjectsSection({ projects }: Props) {
         <div className="mt-10">
           <Link
             href="/projects"
-            className="font-mono text-xs uppercase tracking-widest text-accent hover:text-accent-hover transition-colors duration-150"
+            className="font-mono text-xs uppercase tracking-widest text-accent hover:text-accent-hover transition-colors duration-150 group"
           >
-            {t("view_all")} →
+            {t("view_all")}
+            <span className="inline-block ml-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
           </Link>
         </div>
       </div>
     </section>
   );
 }
-

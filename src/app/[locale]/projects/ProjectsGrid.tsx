@@ -55,4 +55,3 @@ export default function ProjectsGrid({ projects }: Props) {
     </div>
   );
 }
-
