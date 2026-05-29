@@ -5,14 +5,12 @@ import { motion } from "framer-motion";
 type SectionTitleProps = {
   title: string;
   subtitle?: string;
-  label?: string;
   sectionNumber?: string;
 };
 
 export default function SectionTitle({
   title,
   subtitle,
-  label,
   sectionNumber,
 }: SectionTitleProps) {
   return (
@@ -26,11 +24,6 @@ export default function SectionTitle({
       {sectionNumber && (
         <span className="section-number -top-8 left-0">
           {sectionNumber}
-        </span>
-      )}
-      {label && (
-        <span className="inline-block text-[0.65rem] uppercase tracking-[0.15em] text-text-muted font-sans mb-3">
-          {label}
         </span>
       )}
       <h2 className="relative z-10 text-[clamp(2rem,4vw,4rem)] font-bold text-text-primary -tracking-0.02em leading-tight">
