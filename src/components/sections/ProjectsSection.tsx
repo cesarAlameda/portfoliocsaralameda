@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -12,13 +12,88 @@ type Props = {
   projects: Project[];
 };
 
+const AUTO_SCROLL_INTERVAL = 5000;
+const DESKTOP_BREAKPOINT = 768;
+
 export default function ProjectsSection({ projects }: Props) {
   const t = useTranslations("projects");
   const locale = useLocale() as "es" | "en";
 
-  const featured = projects.filter((p) => p.featured);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
+  const [isHovering, setIsHovering] = useState(false);
+
+  const maxIndex = Math.max(0, projects.length - visibleCount);
+
+  // ── Resize listener for responsive visibleCount ──
+  useEffect(() => {
+    function handleResize() {
+      setVisibleCount(window.innerWidth >= DESKTOP_BREAKPOINT ? 3 : 1);
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // ── Clamp index if visibleCount changes ──
+  useEffect(() => {
+    setCurrentIndex((prev) => Math.min(prev, Math.max(0, projects.length - visibleCount)));
+  }, [visibleCount, projects.length]);
+
+  // ── Navigation ──
+  const goNext = useCallback(() => {
+    setCurrentIndex((prev) => {
+      const newMax = Math.max(0, projects.length - visibleCount);
+      return prev >= newMax ? 0 : prev + 1;
+    });
+    resetAutoScroll();
+  }, [projects.length, visibleCount]);
+
+  const goPrev = useCallback(() => {
+    setCurrentIndex((prev) => {
+      const newMax = Math.max(0, projects.length - visibleCount);
+      return prev === 0 ? newMax : prev - 1;
+    });
+    resetAutoScroll();
+  }, [projects.length, visibleCount]);
+
+  // ── Auto-scroll ──
+  const startAutoScroll = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prev) => {
+        const newMax = Math.max(0, projects.length - visibleCount);
+        return prev >= newMax ? 0 : prev + 1;
+      });
+    }, AUTO_SCROLL_INTERVAL);
+  }, [projects.length, visibleCount]);
+
+  const resetAutoScroll = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+    if (!isHovering) {
+      startAutoScroll();
+    }
+  }, [isHovering, startAutoScroll]);
+
+  useEffect(() => {
+    if (!isHovering) {
+      startAutoScroll();
+    } else if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isHovering, startAutoScroll]);
+
+  // ── Scroll-reveal observer ──
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
@@ -38,6 +113,9 @@ export default function ProjectsSection({ projects }: Props) {
     cards.forEach((card) => observer.observe(card));
     return () => observer.disconnect();
   }, []);
+
+  // ── Track translateX percentage ──
+  const translateX = -(currentIndex * (100 / visibleCount));
 
   return (
     <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={sectionRef}>
@@ -64,42 +142,84 @@ export default function ProjectsSection({ projects }: Props) {
           sectionNumber="03"
         />
 
-        {/* Asymmetric grid: first featured spans full width, rest in 2-col grid */}
-        <div className="space-y-6">
-          {/* First featured — wider */}
-          {featured.length > 0 && (
-            <div className="md:col-span-2 js-reveal" style={{ transitionDelay: "0s" }}>
-              <ProjectCard
-                project={featured[0]}
-                locale={locale}
-                featured={true}
-              />
-            </div>
-          )}
-
-          {/* Remaining projects in 2-column grid */}
-          {projects.length > 0 && (
-            <div className="grid md:grid-cols-2 gap-6">
-              {projects
-                .filter((p) => p.slug !== featured[0]?.slug)
-                .map((project, index) => (
+        {/* ─── Carousel ─── */}
+        <div
+          className="relative js-reveal"
+          style={{ transitionDelay: "0s" }}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
+          {/* Carousel viewport */}
+          <div className="overflow-hidden">
+            <div
+              className="flex gap-6"
+              style={{
+                transform: `translateX(${translateX}%)`,
+                transition: "transform 0.4s ease-out",
+                width: `${(projects.length / visibleCount) * 100}%`,
+              }}
+            >
+              {projects.map((project) => (
                 <div
                   key={project.slug}
-                  className="js-reveal"
-                  style={{ transitionDelay: `${0.08 + index * 0.05}s` }}
+                  className="flex-shrink-0"
+                  style={{ width: `calc((100% - ${(projects.length - 1) * 1.5}rem) / ${projects.length})` }}
                 >
-                  <ProjectCard
-                    project={project}
-                    locale={locale}
-                    featured={
-                      project.featured &&
-                      project.slug !== featured[0]?.slug
-                    }
-                  />
+                  <ProjectCard project={project} locale={locale} />
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* ─── Left Arrow ─── */}
+          {currentIndex > 0 && (
+            <button
+              onClick={goPrev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-20
+                         w-10 h-10 flex items-center justify-center
+                         bg-surface/80 backdrop-blur-sm border border-border
+                         text-accent hover:text-accent-hover hover:bg-surface
+                         transition-all duration-200 rounded-sm cursor-pointer"
+              aria-label="Previous projects"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
           )}
+
+          {/* ─── Right Arrow ─── */}
+          {currentIndex < maxIndex && (
+            <button
+              onClick={goNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-20
+                         w-10 h-10 flex items-center justify-center
+                         bg-surface/80 backdrop-blur-sm border border-border
+                         text-accent hover:text-accent-hover hover:bg-surface
+                         transition-all duration-200 rounded-sm cursor-pointer"
+              aria-label="Next projects"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          )}
+
+          {/* ─── Dots indicator ─── */}
+          <div className="flex justify-center gap-2 mt-6">
+            {Array.from({ length: maxIndex + 1 }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => { setCurrentIndex(i); resetAutoScroll(); }}
+                className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  i === currentIndex
+                    ? "bg-accent w-4"
+                    : "bg-border hover:bg-text-tertiary"
+                }`}
+                aria-label={`Go to project group ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Link to all projects */}
