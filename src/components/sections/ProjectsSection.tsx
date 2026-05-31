@@ -20,6 +20,7 @@ export default function ProjectsSection({ projects }: Props) {
   const locale = useLocale() as "es" | "en";
 
   const sectionRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -114,8 +115,23 @@ export default function ProjectsSection({ projects }: Props) {
     return () => observer.disconnect();
   }, []);
 
-  // ── Track translateX percentage ──
-  const translateX = -(currentIndex * (100 / visibleCount));
+    // ── Track translateX in pixels ──
+    const [viewportWidth, setViewportWidth] = useState(0);
+
+    useEffect(() => {
+      function updateWidth() {
+        if (viewportRef.current) {
+          setViewportWidth(viewportRef.current.getBoundingClientRect().width);
+        }
+      }
+      updateWidth();
+      window.addEventListener("resize", updateWidth);
+      return () => window.removeEventListener("resize", updateWidth);
+    }, [visibleCount]);
+
+    const gapPx = 24; // gap-6 = 1.5rem = 24px
+    const slideDistance = (viewportWidth + gapPx) / visibleCount;
+    const translateXpx = -(currentIndex * slideDistance);
 
   return (
     <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={sectionRef}>
@@ -149,21 +165,20 @@ export default function ProjectsSection({ projects }: Props) {
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
-          {/* Carousel viewport */}
-          <div className="overflow-hidden">
+                    {/* Carousel viewport */}
+          <div ref={viewportRef} className="overflow-hidden">
             <div
               className="flex gap-6"
               style={{
-                transform: `translateX(${translateX}%)`,
+                transform: `translateX(${translateXpx}px)`,
                 transition: "transform 0.4s ease-out",
-                width: `${(projects.length / visibleCount) * 100}%`,
               }}
             >
               {projects.map((project) => (
                 <div
                   key={project.slug}
-                  className="flex-shrink-0"
-                  style={{ width: `calc((100% - ${(projects.length - 1) * 1.5}rem) / ${projects.length})` }}
+                  className="flex-shrink-0 w-full min-w-0"
+                  style={{ width: visibleCount === 1 ? '100%' : `calc((100% - ${(visibleCount - 1) * 1.5}rem) / ${visibleCount})` }}
                 >
                   <ProjectCard project={project} locale={locale} />
                 </div>
