@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cesaralameda.github.io/portfoliocsaralameda
+
+# Sitemaps
+Sitemap: https://cesaralameda.github.io/portfoliocsaralameda/sitemap.xml

@@ -1,0 +1,178 @@
+1:"$Sreact.fragment"
+2:I[9766,[],""]
+3:I[8924,[],""]
+6:I[4431,[],"OutletBoundary"]
+8:I[5278,[],"AsyncMetadataOutlet"]
+a:I[4431,[],"ViewportBoundary"]
+c:I[4431,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[7150,[],""]
+:HL["/portfoliocsaralameda/_next/static/css/40432f6788379d1a.css","style"]
+:HL["/portfoliocsaralameda/_next/static/css/b5e32a1fb2508381.css","style"]
+0:{"P":null,"b":"h-8MbCzUoqFqaSIqn3qsH","p":"/portfoliocsaralameda","c":["","es","projects",""],"i":false,"f":[[["",{"children":[["locale","es","d"],{"children":["projects",{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/portfoliocsaralameda/_next/static/css/40432f6788379d1a.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["locale","es","d"],["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/portfoliocsaralameda/_next/static/css/b5e32a1fb2508381.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L4"]}],{"children":["projects",["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],null],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+11:I[5827,["62","static/chunks/62-b16c34e0eb2c0303.js","493","static/chunks/493-f62c513faa395e06.js","733","static/chunks/733-e2263cea363e0f0d.js","916","static/chunks/app/%5Blocale%5D/projects/page-fe254f7ae72ca75d.js"],"default"]
+12:I[8378,["62","static/chunks/62-b16c34e0eb2c0303.js","493","static/chunks/493-f62c513faa395e06.js","733","static/chunks/733-e2263cea363e0f0d.js","916","static/chunks/app/%5Blocale%5D/projects/page-fe254f7ae72ca75d.js"],"default"]
+4:["$","html",null,{"lang":"es","className":"__variable_8a64f5 __variable_281f52 __variable_533004","children":["$","body",null,{"className":"min-h-screen bg-bg-primary text-text-primary antialiased","children":"$L10"}]}]
+13:T4e1,
+<!-- es:start -->
+
+## Descripción
+
+DinoInvasion es un videojuego arcade para dispositivos móviles, desarrollado utilizando el framework gráfico Canvas de Android. El juego incluye personajes dinosaurio con mecánicas de juego clásicas.
+
+## Características
+
+- Motor gráfico basado en Android Canvas
+- Mecánicas arcade con controles táctiles
+- Personajes y escenarios ambientados en la era de los dinosaurios
+- Optimizado para dispositivos móviles
+
+## Tecnologías
+
+Desarrollado en **Java** utilizando el framework **Android Canvas** para el renderizado gráfico, con optimizaciones para rendimiento en dispositivos móviles.
+
+<!-- es:end -->
+<!-- en:start -->
+
+## Description
+
+DinoInvasion is an arcade video game for mobile devices, developed using Android's Canvas graphics framework. The game features dinosaur characters with classic arcade gameplay mechanics.
+
+## Features
+
+- Graphics engine based on Android Canvas
+- Arcade mechanics with touch controls
+- Characters and settings in the dinosaur era
+- Optimized for mobile devices
+
+## Technologies
+
+Built in **Java** using the **Android Canvas** framework for graphic rendering, with performance optimizations for mobile devices.
+
+<!-- en:end -->
+14:T4e4,
+<!-- es:start -->
+
+## Descripción
+
+Esta herramienta fue desarrollada como parte de las soluciones empresariales en Pool Informático, permitiendo la integración bidireccional entre a3ERP y sistemas externos.
+
+## Características
+
+- Sincronización automática de datos entre sistemas
+- Integración mediante DLL personalizadas
+- Vistas SQL optimizadas para consultas rápidas
+- Sistema de logging y monitoreo
+
+## Tecnologías
+
+Desarrollado con **C#** y **.NET**, utilizando **SQL Views** y **DLL integrations** para conectar con a3ERP. El sistema maneja grandes volúmenes de datos empresariales con rendimiento optimizado.
+
+<!-- es:end -->
+<!-- en:start -->
+
+## Description
+
+This tool was developed as part of the enterprise solutions at Pool Informático, enabling bidirectional integration between a3ERP and external systems.
+
+## Features
+
+- Automatic data synchronization between systems
+- Integration through custom DLLs
+- Optimized SQL Views for fast queries
+- Logging and monitoring system
+
+## Technologies
+
+Built with **C#** and **.NET**, using **SQL Views** and **DLL integrations** to connect with a3ERP. The system handles large volumes of enterprise data with optimized performance.
+
+<!-- en:end -->
+15:T504,
+<!-- es:start -->
+
+## Descripción
+
+Sistema completo de reservas hoteleras desarrollado como proyecto personal, permitiendo la gestión de habitaciones, reservas y clientes a través de una interfaz web.
+
+## Características
+
+- Gestión de habitaciones y disponibilidad
+- Sistema de reservas con selección de fechas
+- Panel de administración para gestión de clientes
+- Base de datos relacional con PostgreSQL
+
+## Tecnologías
+
+Desarrollado con **Java** y **Spring Boot** en el backend, con **PostgreSQL** como base de datos. Frontend construido con **HTML**, **CSS** y **JavaScript** vanilla para mantener la aplicación ligera y rápida.
+
+<!-- es:end -->
+<!-- en:start -->
+
+## Description
+
+Complete hotel reservation system developed as a personal project, allowing management of rooms, reservations, and clients through a web interface.
+
+## Features
+
+- Room and availability management
+- Reservation system with date selection
+- Admin panel for client management
+- Relational database with PostgreSQL
+
+## Technologies
+
+Built with **Java** and **Spring Boot** on the backend, with **PostgreSQL** as the database. Frontend built with vanilla **HTML**, **CSS**, and **JavaScript** to keep the application lightweight and fast.
+
+<!-- en:end -->
+16:T518,
+<!-- es:start -->
+
+## Descripción
+
+API RESTful completa construida con Spring Boot, diseñada para manejar operaciones CRUD empresariales con rendimiento y seguridad.
+
+## Características
+
+- Arquitectura RESTful con Spring Boot
+- Persistencia con JPA/Hibernate y PostgreSQL
+- Pool de conexiones optimizado con HikariCP
+- Documentación de API con Swagger/OpenAPI
+- Autenticación y autorización
+- Pruebas unitarias y de integración
+
+## Tecnologías
+
+Backend completo en **Java** con **Spring Boot**, utilizando **JPA** y **Hibernate** para la capa de persistencia sobre **PostgreSQL**. Conexiones gestionadas con **HikariCP** para rendimiento óptimo.
+
+<!-- es:end -->
+<!-- en:start -->
+
+## Description
+
+Complete RESTful API built with Spring Boot, designed to handle enterprise CRUD operations with performance and security.
+
+## Features
+
+- RESTful architecture with Spring Boot
+- Persistence with JPA/Hibernate and PostgreSQL
+- Optimized connection pooling with HikariCP
+- API documentation with Swagger/OpenAPI
+- Authentication and authorization
+- Unit and integration tests
+
+## Technologies
+
+Full backend in **Java** with **Spring Boot**, using **JPA** and **Hibernate** for the persistence layer on **PostgreSQL**. Connections managed with **HikariCP** for optimal performance.
+
+<!-- en:end -->
+5:[["$","$L11",null,{}],["$","main",null,{"className":"pt-28 px-4 sm:px-6 lg:px-8 min-h-screen relative overflow-hidden","children":[["$","svg",null,{"className":"absolute -top-40 -right-20 w-[500px] h-[500px] opacity-[0.025] pointer-events-none select-none","viewBox":"0 0 500 500","fill":"none","xmlns":"http://www.w3.org/2000/svg","aria-hidden":"true","children":[["$","rect",null,{"x":"40","y":"40","width":"420","height":"420","rx":"12","stroke":"#d4a047","strokeWidth":"0.5"}],["$","rect",null,{"x":"70","y":"70","width":"360","height":"360","rx":"8","stroke":"#d4a047","strokeWidth":"0.4"}],["$","circle",null,{"cx":"250","cy":"250","r":"160","stroke":"#d4a047","strokeWidth":"0.4"}],["$","circle",null,{"cx":"250","cy":"250","r":"110","stroke":"#d4a047","strokeWidth":"0.3"}],["$","circle",null,{"cx":"250","cy":"250","r":"60","stroke":"#d4a047","strokeWidth":"0.25"}],["$","line",null,{"x1":"90","y1":"250","x2":"410","y2":"250","stroke":"#d4a047","strokeWidth":"0.3"}],["$","line",null,{"x1":"250","y1":"90","x2":"250","y2":"410","stroke":"#d4a047","strokeWidth":"0.3"}]]}],["$","div",null,{"className":"max-w-7xl mx-auto relative z-10","children":[["$","div",null,{"className":"mb-12","children":[["$","h1",null,{"className":"text-[clamp(2rem,4vw,4rem)] font-bold text-text-primary -tracking-0.02em leading-tight","children":"Proyectos"}],["$","p",null,{"className":"mt-2 text-text-secondary","children":"Trabajos destacados y proyectos personales"}]]}],["$","$L12",null,{"projects":[{"slug":"dino-invasion","title":{"es":"DinoInvasion","en":"DinoInvasion"},"description":{"es":"Videojuego para móvil desarrollado con Canvas de Android, con mecánicas arcade y personajes dinosaurio.","en":"Mobile video game developed with Android Canvas, featuring arcade mechanics and dinosaur characters."},"technologies":["Java","Android","Canvas"],"images":["/portfoliocsaralameda/images/dino.svg"],"links":{},"featured":true,"year":2024,"content":"$13"},{"slug":"erp-integration-tool","title":{"es":"Herramienta de Integración ERP","en":"ERP Integration Tool"},"description":{"es":"Solución empresarial para integración con a3ERP que automatiza la sincronización de datos entre sistemas.","en":"Enterprise solution for a3ERP integration that automates data synchronization between systems."},"technologies":["C#",".NET","SQL","a3ERP","DLL"],"images":["/portfoliocsaralameda/images/project1.svg"],"links":{},"featured":true,"year":2024,"content":"$14"},{"slug":"hotel-reservations","title":{"es":"Sistema de Reservas de Hotel","en":"Hotel Reservation System"},"description":{"es":"Aplicación web para la gestión de reservas hoteleras con funcionalidades completas de administración.","en":"Web application for hotel reservation management with full administrative capabilities."},"technologies":["Java","Spring Boot","PostgreSQL","HTML","CSS","JavaScript"],"images":["/portfoliocsaralameda/images/hotel.svg"],"links":{},"featured":true,"year":2024,"content":"$15"},{"slug":"spring-boot-rest-api","title":{"es":"API REST con Spring Boot","en":"Spring Boot REST API"},"description":{"es":"API RESTful desarrollada con Spring Boot, JPA y PostgreSQL para gestión de datos empresariales.","en":"RESTful API built with Spring Boot, JPA, and PostgreSQL for enterprise data management."},"technologies":["Java","Spring Boot","PostgreSQL","JPA","Hibernate","REST"],"images":["/portfoliocsaralameda/images/project3.svg"],"links":{"github":"https://github.com/cesarAlameda"},"featured":true,"year":2024,"content":"$16"}]}]]}]]}],"$L17"]
+17:["$","footer",null,{"className":"border-t-2 border-border mt-24 py-12","children":["$","div",null,{"className":"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8","children":["$","div",null,{"className":"flex flex-col md:flex-row items-start justify-between gap-8","children":[["$","div",null,{"children":["$L18",["$","p",null,{"className":"mt-2 text-sm font-mono text-text-tertiary","children":"Backend & Enterprise Software Developer"}]]}],["$","div",null,{"className":"flex flex-col gap-2","children":[["$","span",null,{"className":"text-xs font-mono uppercase tracking-widest text-text-tertiary mb-1","children":"Online"}],["$","a",null,{"href":"https://linkedin.com/in/césar-alameda-barquillo-b059882b0","target":"_blank","rel":"noopener noreferrer","className":"text-sm text-text-secondary hover:text-accent transition-colors duration-150","aria-label":"LinkedIn","children":"LinkedIn"}],["$","a",null,{"href":"https://github.com/cesarAlameda","target":"_blank","rel":"noopener noreferrer","className":"text-sm text-text-secondary hover:text-accent transition-colors duration-150","aria-label":"GitHub","children":"GitHub"}],["$","a",null,{"href":"mailto:cesar.alameda@example.com","className":"text-sm text-text-secondary hover:text-accent transition-colors duration-150","aria-label":"Email","children":"Email"}]]}],["$","div",null,{"className":"text-right","children":[["$","p",null,{"className":"text-xs text-text-tertiary","children":["© ",2026," César Alameda Barquillo"]}],["$","p",null,{"className":"mt-1 text-xs font-mono text-text-tertiary opacity-60","children":"Hecho con Next.js, TailwindCSS y TypeScript. Sin templates."}]]}]]}]}]}]
+19:I[3691,["62","static/chunks/62-b16c34e0eb2c0303.js","493","static/chunks/493-f62c513faa395e06.js","733","static/chunks/733-e2263cea363e0f0d.js","916","static/chunks/app/%5Blocale%5D/projects/page-fe254f7ae72ca75d.js"],"default"]
+18:["$","$L19",null,{"ref":"$undefined","defaultLocale":"es","href":"/es","locale":"$undefined","localeCookie":{"name":"NEXT_LOCALE","maxAge":31536000,"sameSite":"lax"},"unprefixed":"$undefined","className":"text-xl font-bold font-sans text-text-primary hover:text-accent transition-colors duration-150","children":"César Alameda"}]
+1a:I[8713,["62","static/chunks/62-b16c34e0eb2c0303.js","493","static/chunks/493-f62c513faa395e06.js","733","static/chunks/733-e2263cea363e0f0d.js","916","static/chunks/app/%5Blocale%5D/projects/page-fe254f7ae72ca75d.js"],"default"]
+10:["$","$L1a",null,{"locale":"es","now":"$D2026-05-31T19:15:36.749Z","timeZone":"Europe/Madrid","messages":{"nav":{"home":"Inicio","about":"Sobre mí","experience":"Trayectoria","projects":"Proyectos","skills":"Skills","contact":"Contacto"},"hero":{"greeting":"Hola, me llamo","download_cv":"Descargar CV","contact_me":"Contactar"},"about":{"title":"Sobre mí","subtitle":"Llevo unos años desarrollando software, sobre todo backend. Me gusta entender el negocio y construir cosas que realmente funcionen.","label":"Enfoque","focus_backend_title":"Backend","focus_backend":"Java, Spring Boot y PostgreSQL. Construyo APIs, conecto servicios y procuro que todo sea mantenible, testeable y razonablemente rápido.","focus_enterprise_title":"Empresa","focus_enterprise":"He trabajado integrando a3ERP, .NET y C#. Ahí aprendes que el código bonito no sirve de nada si no resuelve el problema de quien lo usa.","focus_ai_title":"IA y Automatización","focus_ai":"Estoy explorando cómo integrar IA en procesos empresariales. No para hacer prompts bonitos, sino para automatizar tareas que nadie quiere hacer."},"experience":{"title":"Experiencia","subtitle":"Dónde he trabajado y qué he hecho.","label":"Trayectoria","present":"Actualidad","other_title":"Otra experiencia"},"projects":{"title":"Proyectos","subtitle":"Algunas cosas que he construido, por gusto o por necesidad.","label":"Trabajos","view_all":"Ver todos los proyectos","view_project":"Ver proyecto","view_github":"Ver en GitHub","view_demo":"Ver demo","featured":"Destacado","no_projects":"No hay proyectos disponibles ahora mismo."},"skills":{"title":"Skills","subtitle":"Tecnologías con las que he trabajado, ordenadas por nivel de soltura.","label":"Stack"},"contact":{"title":"Contacto","subtitle":"Háblame si quieres.","label":"Conectar","description":"Si tienes un proyecto, una idea o simplemente quieres hablar de tecnología, mándame un mensaje. Respondo más rápido por email que por LinkedIn.","email_label":"Enviar correo","linkedin_label":"LinkedIn","github_label":"GitHub","download_cv":"Descargar CV"},"footer":{"copyright":"Todos los derechos reservados.","built_with":"Hecho con Next.js, TailwindCSS y TypeScript. Sin templates."},"not_found":{"title":"No está aquí","description":"La página que buscas no existe o la he movido sin avisar.","go_home":"Volver al inicio"},"metadata":{"home_title":"César Alameda | Backend, Empresa e IA","home_description":"Backend developer en Madrid. Java, Spring Boot, PostgreSQL, a3ERP, .NET y explorando IA para automatización empresarial.","projects_title":"Proyectos | César Alameda","projects_description":"Proyectos de César Alameda: desarrollo backend, integraciones ERP, apps Android, automatización con IA."}},"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"min-h-screen flex items-center justify-center px-4 relative","children":["$","div",null,{"className":"text-center","children":[["$","h1",null,{"className":"text-8xl font-bold font-mono text-accent mb-4 leading-none","children":"404"}],["$","h2",null,{"className":"text-2xl font-semibold text-text-primary mb-2","children":"No está aquí"}],["$","p",null,{"className":"text-text-secondary mb-8 max-w-md mx-auto","children":"La página que buscas no existe o la he movido sin avisar."}],"$L1b"]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]
+1b:["$","$L19",null,{"ref":"$undefined","defaultLocale":"es","href":"/es","locale":"$undefined","localeCookie":"$18:props:localeCookie","unprefixed":"$undefined","className":"inline-flex items-center gap-2 px-5 py-3 bg-accent text-bg-primary font-bold font-sans text-sm hover:bg-accent-hover transition-colors duration-150","children":["← ","Volver al inicio"]}]
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+9:{"metadata":[["$","title","0",{"children":"Proyectos | César Alameda"}],["$","meta","1",{"name":"description","content":"Explora mis proyectos destacados: desarrollo backend, integraciones ERP, soluciones empresariales y apps móviles."}],["$","link","2",{"rel":"canonical","href":"https://cesaralameda.dev/es/"}],["$","link","3",{"rel":"alternate","hrefLang":"es","href":"https://cesaralameda.dev/es/"}],["$","link","4",{"rel":"alternate","hrefLang":"en","href":"https://cesaralameda.dev/en/"}],["$","meta","5",{"property":"og:title","content":"Proyectos | César Alameda"}],["$","meta","6",{"property":"og:description","content":"Explora mis proyectos destacados: desarrollo backend, integraciones ERP, soluciones empresariales y apps móviles."}],["$","meta","7",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","8",{"name":"twitter:title","content":"César Alameda | Backend, Empresa e IA"}],["$","meta","9",{"name":"twitter:description","content":"Backend developer en Madrid. Java, Spring Boot, PostgreSQL, a3ERP, .NET y explorando IA para automatización empresarial."}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0d0d0b"/>
+  <g opacity="0.05" stroke="#d4a047" stroke-width="0.4">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="200" y1="0" x2="200" y2="450"/><line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+  </g>
+  <path d="M30,28 h30 M30,28 v30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M770,28 h-30 M770,28 v30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M30,422 h30 M30,422 v-30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M770,422 h-30 M770,422 v-30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <!-- REST API / server icon -->
+  <g transform="translate(340, 115)" stroke="#d4a047" fill="none">
+    <!-- Server rack -->
+    <rect x="0" y="0" width="120" height="100" rx="3" stroke-width="1.2" opacity="0.5"/>
+    <!-- Rack slots -->
+    <rect x="16" y="12" width="88" height="16" rx="1" stroke-width="0.7" opacity="0.35"/>
+    <rect x="16" y="36" width="88" height="16" rx="1" stroke-width="0.7" opacity="0.35"/>
+    <rect x="16" y="60" width="88" height="16" rx="1" stroke-width="0.7" opacity="0.35"/>
+    <!-- LED dots -->
+    <circle cx="28" cy="20" r="2" fill="#d4a047" fill-opacity="0.2" stroke="none"/>
+    <circle cx="28" cy="44" r="2" fill="#d4a047" fill-opacity="0.2" stroke="none"/>
+    <circle cx="28" cy="68" r="2" fill="#d4a047" fill-opacity="0.2" stroke="none"/>
+    <!-- Bottom accent line -->
+    <line x1="20" y1="90" x2="100" y2="90" stroke-width="0.5" opacity="0.2"/>
+  </g>
+  <!-- API brackets decoration -->
+  <g transform="translate(0, 0)" stroke="#d4a047" stroke-width="0.5" opacity="0.04">
+    <text x="200" y="160" font-family="'Space Grotesk', monospace" font-size="28" fill="#d4a047">GET /api</text>
+    <text x="510" y="280" font-family="'Space Grotesk', monospace" font-size="22" fill="#d4a047">{ ... }</text>
+  </g>
+  <text x="400" y="390" font-family="'Space Grotesk', system-ui, sans-serif" font-size="21" fill="#e8e4dc" text-anchor="middle" font-weight="600" letter-spacing="-0.01em">Spring Boot REST API</text>
+  <text x="400" y="414" font-family="'Space Grotesk', system-ui, sans-serif" font-size="11" fill="#8a867e" text-anchor="middle" letter-spacing="0.02em">Java · Spring Boot · PostgreSQL · JPA</text>
+</svg>

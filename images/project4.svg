@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0d0d0b"/>
+  <g opacity="0.05" stroke="#d4a047" stroke-width="0.4">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="200" y1="0" x2="200" y2="450"/><line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+  </g>
+  <path d="M30,28 h30 M30,28 v30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M770,28 h-30 M770,28 v30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M30,422 h30 M30,422 v-30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M770,422 h-30 M770,422 v-30" stroke="#d4a047" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <!-- Monitor / IDE icon -->
+  <g transform="translate(335, 90)" stroke="#d4a047" fill="none">
+    <rect x="0" y="0" width="130" height="88" rx="3" stroke-width="1.2" opacity="0.5"/>
+    <g stroke-width="0.7" opacity="0.3">
+      <line x1="18" y1="20" x2="72" y2="20"/>
+      <line x1="18" y1="32" x2="90" y2="32"/>
+      <line x1="18" y1="44" x2="55" y2="44"/>
+      <line x1="18" y1="56" x2="80" y2="56"/>
+      <line x1="18" y1="68" x2="40" y2="68"/>
+    </g>
+    <!-- Cursor/active line -->
+    <line x1="18" y1="44" x2="55" y2="44" stroke-width="2" stroke="#d4a047" stroke-opacity="0.15"/>
+    <!-- Stand -->
+    <rect x="58" y="91" width="14" height="12" stroke-width="0.8" opacity="0.25"/>
+    <path d="M48,105 L82,105" stroke-width="1.2" opacity="0.25"/>
+    <!-- Keyboard -->
+    <g transform="translate(0, 124)" stroke-width="0.5" opacity="0.15">
+      <rect x="18" y="0" width="94" height="24" rx="2"/>
+      <rect x="26" y="5" width="12" height="6" rx="1"/><rect x="42" y="5" width="12" height="6" rx="1"/>
+      <rect x="58" y="5" width="12" height="6" rx="1"/><rect x="74" y="5" width="12" height="6" rx="1"/>
+      <rect x="32" y="15" width="12" height="6" rx="1"/><rect x="48" y="15" width="12" height="6" rx="1"/>
+      <rect x="64" y="15" width="12" height="6" rx="1"/>
+    </g>
+  </g>
+  <!-- Bracket decorations -->
+  <g stroke="#d4a047" stroke-width="0.5" opacity="0.04">
+    <text x="220" y="130" font-family="'Space Grotesk', monospace" font-size="14" fill="#d4a047">&lt;/&gt;</text>
+    <text x="560" y="240" font-family="'Space Grotesk', monospace" font-size="11" fill="#d4a047">*.tsx</text>
+  </g>
+  <text x="400" y="390" font-family="'Space Grotesk', system-ui, sans-serif" font-size="21" fill="#e8e4dc" text-anchor="middle" font-weight="600" letter-spacing="-0.01em">Mi Portfolio</text>
+  <text x="400" y="414" font-family="'Space Grotesk', system-ui, sans-serif" font-size="11" fill="#8a867e" text-anchor="middle" letter-spacing="0.02em">Angular · Diseño editorial · Responsive</text>
+</svg>
