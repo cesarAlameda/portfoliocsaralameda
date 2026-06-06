@@ -33,7 +33,7 @@ export interface Skill {
     | "Dev Tools"
     | "Game Development"
     | "Emerging";
-  level?: "expert" | "advanced" | "intermediate" | "familiar";
+  level?: "expert" | "advanced" | "intermediate" | "familiar" | "exploring";
 }
 
 export interface ProjectFrontmatter {
@@ -90,3 +90,4 @@ export const SKILL_CATEGORY_LABELS: Record<
     en: "Emerging",
   },
 } as const;
+

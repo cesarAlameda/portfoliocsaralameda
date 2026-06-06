@@ -48,8 +48,9 @@ export function generateMetadata({
   image?: string;
 }) {
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://cesaralameda.dev";
-  const url = `${siteUrl}/${locale}${path}`;
+    process.env.NEXT_PUBLIC_SITE_URL || "https://cesaralameda.github.io/portfoliocsaralameda";
+  const basePath = "/portfoliocsaralameda";
+  const url = `${siteUrl}${basePath}/${locale}${path}`;
   const ogLocale = locale === "es" ? "es_ES" : "en_US";
 
   return {
@@ -60,7 +61,7 @@ export function generateMetadata({
       description,
       url,
       siteName: "César Alameda | Backend Developer",
-      images: [{ url: `${siteUrl}${image}`, width: 1200, height: 630 }],
+      images: [{ url: `${siteUrl}${basePath}${image}`, width: 1200, height: 630 }],
       locale: ogLocale,
       type: "website" as const,
     },
@@ -68,13 +69,13 @@ export function generateMetadata({
       card: "summary_large_image" as const,
       title,
       description,
-      images: [`${siteUrl}${image}`],
+      images: [`${siteUrl}${basePath}${image}`],
     },
     alternates: {
       canonical: url,
       languages: {
-        es: `${siteUrl}/es${path}`,
-        en: `${siteUrl}/en${path}`,
+        es: `${siteUrl}${basePath}/es${path}`,
+        en: `${siteUrl}${basePath}/en${path}`,
       },
     },
   };

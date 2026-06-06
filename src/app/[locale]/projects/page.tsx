@@ -85,7 +85,8 @@ export default async function ProjectsPage({ params }: Props) {
           <ProjectsGrid projects={projects} />
         </div>
       </main>
-      <Footer social={social} />
+      <Footer social={social} locale={locale} />
     </>
   );
 }
+

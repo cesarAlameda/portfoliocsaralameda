@@ -9,7 +9,12 @@ import Footer from "@/components/layout/Footer";
 import { loadProfile, loadExperience, loadSkills, loadSocial } from "@/lib/content-loader";
 import { loadAllProjects } from "@/lib/mdx-loader";
 
-export default function HomePage() {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params;
   const profile = loadProfile();
   const experience = loadExperience();
   const skills = loadSkills();
@@ -27,7 +32,7 @@ export default function HomePage() {
         <SkillsSection skills={skills} />
         <ContactSection profile={profile} />
       </main>
-      <Footer social={social} />
+      <Footer social={social} locale={locale} />
     </>
   );
 }

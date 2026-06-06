@@ -9,6 +9,7 @@ const levelSymbols: Record<string, { symbol: string; className: string }> = {
   advanced: { symbol: "▸", className: "text-text-secondary" },
   intermediate: { symbol: "●", className: "text-text-tertiary" },
   familiar: { symbol: "○", className: "text-text-tertiary opacity-60" },
+  exploring: { symbol: "◇", className: "text-accent opacity-60" },
 };
 
 const levelLabels: Record<string, { es: string; en: string }> = {
@@ -16,6 +17,7 @@ const levelLabels: Record<string, { es: string; en: string }> = {
   advanced: { es: "Avanzado", en: "Advanced" },
   intermediate: { es: "Intermedio", en: "Intermediate" },
   familiar: { es: "Familiar", en: "Familiar" },
+  exploring: { es: "Explorando", en: "Exploring" },
 };
 export default function SkillLabel({ skill, locale }: SkillLabelProps) {
   const level = skill.level || "familiar";

@@ -28,7 +28,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!project) return { title: "Not Found" };
 
-  const siteUrl = "https://cesaralameda.github.io/portfoliocsaralameda";
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cesaralameda.github.io/portfoliocsaralameda";
+  const basePath = "/portfoliocsaralameda";
+
+  const ogImages = project.images.length > 0
+    ? project.images.map(img => ({
+        url: `${siteUrl}${img}`,
+        width: 1200,
+        height: 630,
+      }))
+    : undefined;
 
   return {
     title:
@@ -40,7 +49,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: project.title[locale as "es" | "en"],
       description: project.description[locale as "es" | "en"],
-      images: project.images.length > 0 ? project.images : undefined,
+      images: ogImages,
+      url: `${siteUrl}${basePath}/${locale}/projects/${slug}`,
     },
   };
 }
@@ -186,7 +196,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
         </article>
       </main>
-      <Footer social={content.social} />
+      <Footer social={content.social} locale={locale} />
     </>
   );
 }

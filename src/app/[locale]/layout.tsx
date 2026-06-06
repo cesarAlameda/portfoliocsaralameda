@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const l = locale as "es" | "en";
   const t = metadataTitles[l];
-  const siteUrl = "https://cesaralameda.dev";
+  const siteUrl = "https://cesaralameda.github.io/portfoliocsaralameda";
 
   return {
     title: t.title,
@@ -77,11 +77,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: t.title,
       description: t.description,
     },
-    alternates: {
-      canonical: `/${l}`,
+        alternates: {
+      canonical: `/portfoliocsaralameda/${l}`,
       languages: {
-        es: "/es",
-        en: "/en",
+        es: `/portfoliocsaralameda/es`,
+        en: `/portfoliocsaralameda/en`,
       },
     },
   };
@@ -110,3 +110,4 @@ export default async function LocaleLayout({ children, params }: Props) {
     </html>
   );
 }
+

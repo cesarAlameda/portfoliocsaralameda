@@ -1,12 +1,14 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/navigation";
 import type { Social } from "@/lib/schema";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/portfoliocsaralameda";
 
 type Props = {
   social: Social;
+  locale: string;
 };
 
-export default function Footer({ social }: Props) {
+export default function Footer({ social, locale }: Props) {
   const t = useTranslations("footer");
 
   return (
@@ -15,12 +17,12 @@ export default function Footer({ social }: Props) {
         <div className="flex flex-col md:flex-row items-start justify-between gap-8">
           {/* Left — Name / Identity */}
           <div>
-            <Link
-              href="/"
+            <a
+              href={`${basePath}/${locale}/`}
               className="text-xl font-bold font-sans text-text-primary hover:text-accent transition-colors duration-150"
             >
               César Alameda
-            </Link>
+            </a>
             <p className="mt-2 text-sm font-mono text-text-tertiary">
               Backend &amp; Enterprise Software Developer
             </p>
@@ -61,7 +63,7 @@ export default function Footer({ social }: Props) {
           {/* Right — Copyright & Tech */}
           <div className="text-right">
             <p className="text-xs text-text-tertiary">
-              © {new Date().getFullYear()} César Alameda Barquillo
+              &copy; {new Date().getFullYear()} César Alameda Barquillo
             </p>
             <p className="mt-1 text-xs font-mono text-text-tertiary opacity-60">
               {t("built_with")}
@@ -72,3 +74,4 @@ export default function Footer({ social }: Props) {
     </footer>
   );
 }
+
